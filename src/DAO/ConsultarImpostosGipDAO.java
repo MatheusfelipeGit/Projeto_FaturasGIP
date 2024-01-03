@@ -1,0 +1,94 @@
+package DAO;
+
+import DTO.ConsultarImpostosGipDTO;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ConsultarImpostosGipDAO {
+
+    Connection conn;
+    PreparedStatement pstm;
+    ResultSet rs;
+    List<ConsultarImpostosGipDTO> lista = new ArrayList<>();
+
+    public List<ConsultarImpostosGipDTO> consultarImpostos(String filtrarmes, String filtrarAno, String PesGeral) {
+
+        conn = new ConexaoGipDAO().conectaBD();
+
+        try {
+            String sql = "SELECT * FROM impostos WHERE 1=1"; // Inicia a construção da consulta do SQL
+
+            if (!filtrarmes.isEmpty()) {
+                sql += " AND MesReferente_impostos LIKE ?"; // Adiciona a condição para o mês de referência
+            }
+
+            if (!filtrarAno.isEmpty()) {
+                sql += " AND Ano_impostos LIKE ?"; // Adiciona a condição para o ano de referência
+            }
+
+            if (!PesGeral.isEmpty()) {
+                sql += " AND (Im_TUSD_impostos LIKE ? OR "
+                        + "Im_TE_impostos LIKE ? OR "
+                        + "Resultado_impostos LIKE ? OR "
+                        + "Pis_impostos LIKE ? OR "
+                        + "Cofins_impostos LIKE ? OR "
+                        + "Ajuste_impostos LIKE ? )"; // Adiciona a condição para a pesquisa geral em várias colunas
+
+            }
+
+            pstm = conn.prepareStatement(sql); // Prepara a declaração SQL com as condições adicionadas 
+        int index = 1; // Índice dos placeholders
+        /*Um placeholder é um marcador ou espaço reservado em uma consulta SQL que é usado
+        para representar um valor que será fornecido posteriormente. 
+        Esses marcadores são substituídos pelos valores reais quando 
+        a consulta é executada, o que permite a criação de consultas dinâmicas e parametrizadas.*/
+        //ou seja, ele pega o valor do placeholder, amarzana em uma variavel, e depois me retorna o valor pesquisado dentro dessa viaravel
+        
+        
+        if (!filtrarmes.isEmpty()) {
+            pstm.setString(index++,"%"+ filtrarmes +"%"); // Adiciona o valor do mês ao placeholder
+        }
+        
+        if (!filtrarAno.isEmpty()) {
+            pstm.setString(index++, filtrarAno); // Adiciona o valor do ano ao placeholder
+        }
+        
+        if (!PesGeral.isEmpty()) {
+            for (int i = 1; i <= 6; i++) {
+                pstm.setString(index++, "%" + PesGeral + "%"); // Adiciona o valor de pesquisa geral aos placeholders
+            }
+        }
+
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                ConsultarImpostosGipDTO objconsultarimpostosgipdto = new ConsultarImpostosGipDTO();
+
+                objconsultarimpostosgipdto.setIm_TUSD_impostos(rs.getString("Im_TUSD_impostos"));
+                objconsultarimpostosgipdto.setIm_TE_impostos(rs.getString("Im_TE_impostos"));
+                objconsultarimpostosgipdto.setResultado_impostos(rs.getString("Resultado_impostos"));
+                objconsultarimpostosgipdto.setPis_impostos(rs.getString("Pis_impostos"));
+                objconsultarimpostosgipdto.setCofins_impostos(rs.getString("Cofins_impostos"));
+                objconsultarimpostosgipdto.setAjuste_impostos(rs.getString("Ajuste_impostos"));
+                objconsultarimpostosgipdto.setMesReferente_impostos(rs.getString("MesReferente_impostos"));
+                objconsultarimpostosgipdto.setAno_impostos(rs.getString("Ano_impostos"));
+
+                lista.add(objconsultarimpostosgipdto);
+            }
+
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Falha ao consultar" + erro);
+        }
+        return lista;
+    }
+}
+/*
+CÓDIGO PENSADO POR: JEFF 
+E DESENVOLVIDO POR: MATHEUS FELIPE lEITE JANUÁRIO
+ */

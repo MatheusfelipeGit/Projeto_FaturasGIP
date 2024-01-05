@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 
 
 public class CadastroConsumoFaturaGipDAO {
-    Connection conn;
+    Connection conn;//DEFINE CONEXÃO
     PreparedStatement pstm;
     ResultSet rs;
   

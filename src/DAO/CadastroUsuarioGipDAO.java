@@ -6,18 +6,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+//import necessario para a realização de uma função/retorno especifico 
 
 public class CadastroUsuarioGipDAO {
      
-    Connection conn;
-    PreparedStatement pstm;
+    Connection conn; //conection conn
+    PreparedStatement pstm; //prepared é pstm 
     
     
     public void cadastrarUsuario(CadastroUsuarioGipDTO objcadastrarusuariogipdto) {
         String sql = "insert into usuario (If_usuario,NomeCompleto_usuario, Senha_usuario) values (?,?,?)"  ;
-        conn = new ConexaoGipDAO().conectaBD();
+        //inserir dados no banco de dados com tabela e colunas especificas
+        conn = new ConexaoGipDAO().conectaBD(); //chama a conexao com o banco de dados 
         
-        
+        //função de cadastro
         try {
             
             pstm = conn.prepareStatement(sql);

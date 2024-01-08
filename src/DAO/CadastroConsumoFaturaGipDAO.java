@@ -4,7 +4,7 @@ package DAO;
 import DTO.CadastroConsumoFaturaGipDTO;
 import com.mysql.cj.jdbc.CallableStatement;
 import java.sql.Connection;
-
+//import necessario para a realização de uma função/retorno especifico 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -12,18 +12,18 @@ import java.sql.ResultSet;
 
 
 public class CadastroConsumoFaturaGipDAO {
-    Connection conn;//DEFINE CONEXÃO
-    PreparedStatement pstm;
-    ResultSet rs;
+    Connection conn;  //define conn Connection
+    PreparedStatement pstm;   //define pstm como preparedstatement
+    ResultSet rs; //define rs como ResultSet
   
     public void cadastrarConFatura(CadastroConsumoFaturaGipDTO objcadastroconsumofaturagipdto) {
         String sqlRepet = "SELECT * FROM cadastroConsumoFatura WHERE CodigoBarrasCon_cadastroConsumoFatura = ? AND MesReferente_cadastroConsumoFatura = ? AND Ano_cadastroConsumoFatura = ?";
-        
+        //select com codições
         String sqlVerificarCodigo = "SELECT Tipos_faturanova FROM faturanova WHERE CodBarrasRed_faturanova = ?";
-        
+        //select após as condições para confirmar se existe a fatura 
         
         try {
-            conn = new ConexaoGipDAO().conectaBD();
+            conn = new ConexaoGipDAO().conectaBD(); //aqui faz a conexão com bd
             
             
             pstm = conn.prepareStatement(sqlRepet);
@@ -91,7 +91,7 @@ public class CadastroConsumoFaturaGipDAO {
     }
     
 
-
+    //esse código chama a procedure feita no banco de dados 
     public void chamarProcedure() throws SQLException {
         Connection conn = null;
         CallableStatement callableStatement = null;

@@ -7,10 +7,14 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
+//import necessario para a realização de uma função/retorno especifico 
+
 public class BandeirasGipDAO {
-    Connection conn;
-    PreparedStatement pstm;
+    Connection conn; //conection é conn
+    PreparedStatement pstm; //prepared é pstm
     
+    
+    //aqui é a função de inserir dados no banco de dados, com a tabela e colunas definidas/ chamando tb a conexao
     public void cadastrarBandeira(BandeirasGipDTO objbandeirasgipdto) {
         String sql = "insert into bandeiras (CorBandeiras_bandeiras, Valor_bandeiras, MesReferente_bandeiras, Ano_bandeiras) values (?,?,?,?)";
         conn = new ConexaoGipDAO().conectaBD();

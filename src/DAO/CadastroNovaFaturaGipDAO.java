@@ -5,18 +5,21 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+//import necessario para a realização de uma função/retorno especifico 
+
 
 public class CadastroNovaFaturaGipDAO {
 
-    Connection conn;
-    PreparedStatement pstm;
+    Connection conn; //conection é conn
+    PreparedStatement pstm; //prepared é pstm
+    
 
     public void cadastrarFatura(CadastroNovaFaturaGipDTO objfaturasgipdto) {
 
-        conn = new ConexaoGipDAO().conectaBD();
+        conn = new ConexaoGipDAO().conectaBD(); //faz a conexao com o banco de dados 
 
         String sql = "insert into faturanova (CodigoBarras_faturanova, Instalacao_faturanova, CargaLevantada_faturanova, MedidorInstalacao_faturanova, Rua_faturanova, Numero_faturanova, Bairro_faturanova, Tipos_faturanova, CodBarrasRed_faturanova, Unidade_faturanova, Avenca_faturanova) values (?,?,?,?,?,?,?,?,?,?,?)";
-
+        //insert de dados com tabela e colunas especificadas 
         try {
 
             pstm = conn.prepareStatement(sql);

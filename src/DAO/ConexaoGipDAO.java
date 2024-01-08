@@ -5,9 +5,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+//import necessario para a realização de uma função/retorno especifico 
+
 
 public class ConexaoGipDAO {
-    
+    //realiza a função 
     public Connection conectaBD() {
         
         Connection conn = null; 

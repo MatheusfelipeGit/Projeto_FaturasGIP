@@ -4,6 +4,7 @@ package DAO;
 import DTO.ConsultarConsumoGipDTO;
 import DTO.RelatorioGipDTO;
 import com.mysql.cj.jdbc.CallableStatement;
+
 import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,9 +16,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
+
 import java.util.logging.Logger;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
+
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -62,11 +65,12 @@ public class RelatorioGipDAO {
                 RelatorioGipDTO objrelatoriogipdto = new RelatorioGipDTO();
                 
                 objrelatoriogipdto.setInstalacao_faturanova(rs.getString("Instalacao_faturanova"));
-                objrelatoriogipdto.setTipos_faturanova(rs.getString("Tipos_faturanova"));
+                
                 objrelatoriogipdto.setMesReferente_cadastroConsumoFatura(rs.getString("MesReferente_cadastroConsumoFatura"));
-                objrelatoriogipdto.setAno_cadastroConsumoFatura(rs.getString("Ano_cadastroConsumoFatura"));
                 objrelatoriogipdto.setValor_cadastroConsumoFatura(rs.getString("Valor_cadastroConsumoFatura"));
                 objrelatoriogipdto.setKw_cadastroConsumoFatura(rs.getString("Kw_cadastroConsumoFatura"));
+                objrelatoriogipdto.setAno_cadastroConsumoFatura(rs.getString("Ano_cadastroConsumoFatura"));
+                
                 objrelatoriogipdto.setAuditoria_cadastroConsumoFatura(rs.getString("Auditoria_cadastroConsumoFatura"));
                 //objrelatoriogipdto.setCodBarrasRed_cadastroConsumoFatura(rs.getString("CodBarrasRed_cadastroConsumoFatura"));
                 
@@ -118,27 +122,27 @@ public class RelatorioGipDAO {
         Row headerRow = sheet.createRow(rowIndex++);
 
         // Define o cabeçalho das colunas da planilha
-        
-        headerRow.createCell(0).setCellValue("instalacao");
-        headerRow.createCell(1).setCellValue("tipos");
-        headerRow.createCell(2).setCellValue("Mes Referente");
-        headerRow.createCell(3).setCellValue("Ano");
-        headerRow.createCell(4).setCellValue("Valor");
-        headerRow.createCell(5).setCellValue("Kw");
-        headerRow.createCell(6).setCellValue("Auditoria");
-        
+                   headerRow.createCell(0).setCellValue("instalacao");
 
-        // Preenche os dados na planilha a partir da lista de DTOs
-        for (RelatorioGipDTO dto : listar) {
-            Row dataRow = sheet.createRow(rowIndex++);
-            dataRow.createCell(0).setCellValue(dto.getInstalacao_faturanova());
-            dataRow.createCell(1).setCellValue(dto.getTipos_faturanova());
-            dataRow.createCell(2).setCellValue(dto.getMesReferente_cadastroConsumoFatura());
-            dataRow.createCell(3).setCellValue(dto.getAno_cadastroConsumoFatura());
-            dataRow.createCell(4).setCellValue(dto.getValor_cadastroConsumoFatura());
-            dataRow.createCell(5).setCellValue(dto.getKw_cadastroConsumoFatura());
-            dataRow.createCell(6).setCellValue(dto.getAuditoria_cadastroConsumoFatura());
-        }
+            headerRow.createCell(1).setCellValue("Mes Referente");
+            headerRow.createCell(2).setCellValue("Valor");
+            headerRow.createCell(3).setCellValue("Kw");
+            headerRow.createCell(4).setCellValue("Ano");
+
+            headerRow.createCell(5).setCellValue("Auditoria");
+
+            // Preenche os dados na planilha a partir da lista de DTOs
+            for (RelatorioGipDTO dto : listar) {
+                Row dataRow = sheet.createRow(rowIndex++);
+                dataRow.createCell(0).setCellValue(dto.getInstalacao_faturanova());
+
+                dataRow.createCell(1).setCellValue(dto.getMesReferente_cadastroConsumoFatura());
+                dataRow.createCell(2).setCellValue(dto.getValor_cadastroConsumoFatura());
+                dataRow.createCell(3).setCellValue(dto.getKw_cadastroConsumoFatura());
+                dataRow.createCell(4).setCellValue(dto.getAno_cadastroConsumoFatura());
+
+                dataRow.createCell(5).setCellValue(dto.getAuditoria_cadastroConsumoFatura());
+            }
 
         // mensagem que avisa oonde a planilha está/ Salva a mesma
         try (FileOutputStream outputStream = new FileOutputStream(filePath)) {

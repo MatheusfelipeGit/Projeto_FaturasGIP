@@ -63,19 +63,19 @@ public class TelaRelatorio extends javax.swing.JFrame {
 
         TabelaTxt.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Instalação", "Tipo", "Mês", "Ano", "Valor", "Kw", "Auditoria"
+                "Instalação", "Mês", "Valor", "Kw", "Ano"
             }
         ));
         jScrollPane1.setViewportView(TabelaTxt);
@@ -138,20 +138,20 @@ public class TelaRelatorio extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(AuditoriaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                         .addComponent(BuscarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(381, 381, 381))
+                .addGap(414, 414, 414))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(45, 45, 45)
                 .addComponent(jLabel1)
-                .addGap(39, 39, 39)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel3)
@@ -289,11 +289,12 @@ public class TelaRelatorio extends javax.swing.JFrame {
             for (int i = 0; i < lista.size(); i++) {
                 model.addRow(new Object[]{
                     lista.get(i).getInstalacao_faturanova(),
-                    lista.get(i).getTipos_faturanova(),
+                   
                     lista.get(i).getMesReferente_cadastroConsumoFatura(),
+                     lista.get(i).getValor_cadastroConsumoFatura(),
+                     lista.get(i).getKw_cadastroConsumoFatura(),
                     lista.get(i).getAno_cadastroConsumoFatura(),
-                    lista.get(i).getValor_cadastroConsumoFatura(),
-                    lista.get(i).getKw_cadastroConsumoFatura(),
+                    
                     lista.get(i).getAuditoria_cadastroConsumoFatura(),});
             }
 

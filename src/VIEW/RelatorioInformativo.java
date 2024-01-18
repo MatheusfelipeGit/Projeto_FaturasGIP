@@ -4,6 +4,13 @@
  */
 package VIEW;
 
+import DAO.RelatorioInformativoDAO;
+import DTO.RelatorioInformativoDTO;
+import java.sql.SQLException;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author jateixeira
@@ -30,9 +37,9 @@ public class RelatorioInformativo extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        BtnVoltar = new javax.swing.JButton();
-        BtnBuscar = new javax.swing.JButton();
+        TabelaInformativo = new javax.swing.JTable();
+        VoltarBtn = new javax.swing.JButton();
+        BuscarBtn = new javax.swing.JButton();
         InstTxt = new javax.swing.JTextField();
         TipoTxt = new javax.swing.JTextField();
         AnoTxt = new javax.swing.JTextField();
@@ -44,9 +51,9 @@ public class RelatorioInformativo extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable2.setBackground(new java.awt.Color(204, 204, 204));
-        jTable2.setForeground(new java.awt.Color(204, 204, 204));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaInformativo.setBackground(new java.awt.Color(204, 204, 204));
+        TabelaInformativo.setForeground(new java.awt.Color(204, 204, 204));
+        TabelaInformativo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -54,16 +61,26 @@ public class RelatorioInformativo extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Instalacao", "Jan", "kw", "Fev", "Kw", "Mar", "Kw", "Abril", "Kw", "Maio", "Kw", "Junho", "kw", "Julho", "Kw", "Agosto", "Kw", "Setem", "Kw", "Out", "Kw", "Novem", "Kw", "Dezem", "Kw"
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(TabelaInformativo);
 
-        BtnVoltar.setText("VOLTAR");
+        VoltarBtn.setText("VOLTAR");
+        VoltarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VoltarBtnActionPerformed(evt);
+            }
+        });
 
-        BtnBuscar.setText("BUSCAR");
+        BuscarBtn.setText("BUSCAR");
+        BuscarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarBtnActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setText("Instalação:");
+        jLabel1.setText("Barras");
 
         jLabel2.setText("Tipo:");
 
@@ -79,22 +96,24 @@ public class RelatorioInformativo extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1625, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(InstTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TipoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(VoltarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jLabel1)
+                                .addGap(271, 271, 271)
+                                .addComponent(jLabel2))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(InstTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(49, 49, 49)
+                                .addComponent(TipoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(AnoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(BuscarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -103,7 +122,7 @@ public class RelatorioInformativo extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
-                        .addComponent(BtnBuscar))
+                        .addComponent(BuscarBtn))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -118,7 +137,7 @@ public class RelatorioInformativo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(BtnVoltar)
+                .addComponent(VoltarBtn)
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
@@ -137,6 +156,22 @@ public class RelatorioInformativo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BuscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarBtnActionPerformed
+        
+        try{ 
+             listarValores();
+         }catch(Exception erro){
+             JOptionPane.showMessageDialog(null, "erro listagem" + erro);
+             }    
+    }//GEN-LAST:event_BuscarBtnActionPerformed
+
+    private void VoltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtnActionPerformed
+     TelaRelatorio telaRelatorio = new TelaRelatorio();
+     telaRelatorio.setVisible(true);
+      
+      this.dispose();
+    }//GEN-LAST:event_VoltarBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,15 +210,48 @@ public class RelatorioInformativo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AnoTxt;
-    private javax.swing.JButton BtnBuscar;
-    private javax.swing.JButton BtnVoltar;
+    private javax.swing.JButton BuscarBtn;
     private javax.swing.JTextField InstTxt;
+    private javax.swing.JTable TabelaInformativo;
     private javax.swing.JTextField TipoTxt;
+    private javax.swing.JButton VoltarBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
+private void listarValores() {
+    
+        try {
+            RelatorioInformativoDAO relatorioInformativodao = new RelatorioInformativoDAO();
+
+            DefaultTableModel model = (DefaultTableModel) TabelaInformativo.getModel();
+            model.setNumRows(0);
+
+            String Barras = InstTxt.getText();
+
+            String Tipo = TipoTxt.getText();
+
+            String Ano = AnoTxt.getText();
+            
+            List<RelatorioInformativoDTO> lista = relatorioInformativodao.RelatorioInfo(Barras, Tipo, Ano);
+
+            for (int i = 0; i < lista.size(); i++) {
+                model.addRow(new Object[]{
+                    lista.get(i).getCodigoBarrasCon_cadastroConsumoFatura(),
+                    lista.get(i).getTipos_faturanova(),
+                    lista.get(i).getMesReferente_cadastroConsumoFatura(),
+                    lista.get(i).getAno_cadastroConsumoFatura(),
+                    lista.get(i).getValor_cadastroConsumoFatura(),
+                    lista.get(i).getKw_cadastroConsumoFatura(),
+                    lista.get(i).getCodBarrasRed_cadastroConsumoFatura(),});
+            }
+
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "listarValores" + erro);
+        }
+    }
+
+
 }

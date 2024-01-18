@@ -17,23 +17,24 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+//import necessario para a realização de uma função/retorno especifico 
 
 public class ConsultarConsumoGipDAO {
     
-    Connection conn;
-    PreparedStatement pstm;
-    ResultSet rs;
+    Connection conn; //define conn Connection
+    PreparedStatement pstm; //define pstm como preparedstatement
+    ResultSet rs; //define rs como ResultSet
     
     List<ConsultarConsumoGipDTO> lista = new ArrayList<>();
     
     public List<ConsultarConsumoGipDTO> consultarConsumo(String instalacao, String Mesref, String AnoRef, String Valor, String Data, String Kw, String Tipos,String PesqGeral, String Filtroinstalacao, String FiltroMesRef, String FiltroAnoRef, String FiltroValor, String FiltroData, String FiltroKw, String FiltroTipos) {
-        
-        conn = new ConexaoGipDAO().conectaBD();
+        //declaração de Strings de pesquisa
+        conn = new ConexaoGipDAO().conectaBD();//realiza conexao
         
         try {
             String sql = " SELECT * FROM cadastroConsumoFatura " +
                     " INNER JOIN faturanova on CodBarrasRed_faturanova = CodBarrasRed_cadastroConsumoFatura AND Tipos_faturanova = Tipos_faturanova";
-                    
+              //codigo de conversação com o banco de dados na linguagem do banco de dados       
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
             
         if (!instalacao.isEmpty()) {
@@ -67,31 +68,31 @@ public class ConsultarConsumoGipDAO {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         if (!Filtroinstalacao.isEmpty()) {
-                sql += " AND Instalacao_faturanova LIKE ? "; // Adicione a condição para a instalação
+                sql += " AND Instalacao_faturanova LIKE ? "; // Adicione a condição de referência
             }
         
         if (!FiltroMesRef.isEmpty()) {
-            sql += " AND MesReferente_cadastroConsumoFatura LIKE ? "; // Adiciona a condição para o CodBarrasRed de referência
+            sql += " AND MesReferente_cadastroConsumoFatura LIKE ? "; // Adiciona a condição de referência
         }
         
         if (!FiltroAnoRef.isEmpty()) {
-            sql += " AND Ano_cadastroConsumoFatura LIKE ? "; // Adiciona a condição para o CodBarrasRed de referência
+            sql += " AND Ano_cadastroConsumoFatura LIKE ? "; // Adiciona a condição de referência
         }
         
         if (!FiltroValor.isEmpty()) {
-            sql += " AND Valor_cadastroConsumoFatura LIKE ? "; // Adiciona a condição para o CodBarrasRed de referência
+            sql += " AND Valor_cadastroConsumoFatura LIKE ? "; // Adiciona a condição de referência
         }
         
         if (!FiltroData.isEmpty()) {
-            sql += " AND DataCadastro_cadastroConsumoFatura LIKE ? "; // Adiciona a condição para o CodBarrasRed de referência
+            sql += " AND DataCadastro_cadastroConsumoFatura LIKE ? "; // Adiciona a condição de referência
         }
         
         if (!FiltroKw.isEmpty()) {
-            sql += " AND Kw_cadastroConsumoFatura LIKE ? "; // Adiciona a condição para o CodBarrasRed de referência
+            sql += " AND Kw_cadastroConsumoFatura LIKE ? "; // Adiciona a condição de referência
         }
         
         if (!FiltroTipos.isEmpty()) {
-            sql += " AND Tipos_faturanova LIKE ? "; // Adiciona a condição para o CodBarrasRed de referência
+            sql += " AND Tipos_faturanova LIKE ? "; // Adiciona a condição de referência
         }
         
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -127,33 +128,33 @@ public class ConsultarConsumoGipDAO {
         }
         
         if (!Mesref.isEmpty()) {
-            pstm.setString(index++, "%" + Mesref + "%"); // Adiciona o valor do mês ao placeholder
+            pstm.setString(index++, "%" + Mesref + "%"); // Adiciona o valor 
         }
         
         if (!AnoRef.isEmpty()) {
-            pstm.setString(index++, "%" + AnoRef + "%"); // Adiciona o valor do mês ao placeholder
+            pstm.setString(index++, "%" + AnoRef + "%"); // Adiciona o valor 
         }
         
         
         if (!Valor.isEmpty()) {
-            pstm.setString(index++, "%" + Valor + "%" ); // Adiciona o valor do ano ao placeholder
+            pstm.setString(index++, "%" + Valor + "%" ); // Adiciona o valor
         }
         
         if (!Data.isEmpty()) {
-            pstm.setString(index++, "%" + Data +"%"); // Adiciona o valor do ano ao placeholder
+            pstm.setString(index++, "%" + Data +"%"); // Adiciona o valor 
         }
         
         if (!Kw.isEmpty()) {
-            pstm.setString(index++, "%" + Kw +"%"); // Adiciona o valor do ano ao placeholder
+            pstm.setString(index++, "%" + Kw +"%"); // Adiciona o valor
         }
         
         if (!Tipos.isEmpty()) {
-            pstm.setString(index++, "%" + Tipos +"%"); // Adiciona o valor do ano ao placeholder
+            pstm.setString(index++, "%" + Tipos +"%"); // Adiciona o valor 
         }
         
         if (!PesqGeral.isEmpty()) {
             for (int i = 1; i <= 10; i++) {
-                pstm.setString(index++,"%"+ PesqGeral +"%"); // Adiciona o valor de pesquisa geral aos placeholders
+                pstm.setString(index++,"%"+ PesqGeral +"%"); // Adiciona o valor 
             }
         }
         

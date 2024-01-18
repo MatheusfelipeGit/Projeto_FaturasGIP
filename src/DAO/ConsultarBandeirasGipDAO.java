@@ -14,14 +14,15 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
+//import necessario para a realização de uma função/retorno especifico 
 
 public class ConsultarBandeirasGipDAO {
      
     
-    Connection conn;
-    PreparedStatement pstm;
-    ResultSet rs;
+    Connection conn;  //define conn Connection
+    PreparedStatement pstm;   //define pstm como preparedstatement
+    ResultSet rs; //define rs como ResultSet
+    
     List<ConsultarBandeirasGipDTO> lista = new ArrayList<>();
     
     

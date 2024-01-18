@@ -12,16 +12,18 @@ import java.sql.ResultSet;
 
 import java.util.ArrayList;
 import java.util.List;
+//import necessario para a realização de uma função/retorno especifico
 
 public class EdicaoConsumoGipDAO {
 
-    Connection conn;
-    PreparedStatement pstm;
-    ResultSet rs;
+    Connection conn; //define conn Connection
+    PreparedStatement pstm; //define pstm como preparedstatement
+    ResultSet rs; //define rs como ResultSet
+    
     List<EdicaoConsumoGipDTO> lista = new ArrayList<>();
 
     public List<EdicaoConsumoGipDTO> EdicaoFatura(String inst,String MesRef,String Ano) {
-
+        //declaração de Strings de pesquisa
         conn = new ConexaoGipDAO().conectaBD();
 
         try {

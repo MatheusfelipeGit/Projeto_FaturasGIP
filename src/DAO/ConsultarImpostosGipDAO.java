@@ -9,17 +9,19 @@ import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+//import necessario para a realização de uma função/retorno especifico 
 
 public class ConsultarImpostosGipDAO {
 
-    Connection conn;
-    PreparedStatement pstm;
-    ResultSet rs;
+    Connection conn;  //define conn Connection
+    PreparedStatement pstm;   //define pstm como preparedstatement
+    ResultSet rs; //define rs como ResultSet
+    
     List<ConsultarImpostosGipDTO> lista = new ArrayList<>();
 
     public List<ConsultarImpostosGipDTO> consultarImpostos(String filtrarmes, String filtrarAno, String PesGeral) {
-
-        conn = new ConexaoGipDAO().conectaBD();
+        //declaração de Strings de pesquisa
+        conn = new ConexaoGipDAO().conectaBD();//realiza a conexao
 
         try {
             String sql = "SELECT * FROM impostos WHERE 1=1"; // Inicia a construção da consulta do SQL

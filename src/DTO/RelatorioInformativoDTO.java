@@ -3,7 +3,8 @@ package DTO;
 
 
 public class RelatorioInformativoDTO {
-    private String Instalacao_faturanova;
+    
+    private String CodigoBarrasCon_cadastroConsumoFatura;
     private String Tipos_faturanova;
     private String MesReferente_cadastroConsumoFatura;
     private String Ano_cadastroConsumoFatura;
@@ -13,17 +14,17 @@ public class RelatorioInformativoDTO {
     private String Auditoria_cadastroConsumoFatura;
 
     /**
-     * @return the Instalacao_faturanova
+     * @return the CodigoBarrasCon_cadastroConsumoFatura
      */
-    public String getInstalacao_faturanova() {
-        return Instalacao_faturanova;
+    public String getCodigoBarrasCon_cadastroConsumoFatura() {
+        return CodigoBarrasCon_cadastroConsumoFatura;
     }
 
     /**
-     * @param Instalacao_faturanova the Instalacao_faturanova to set
+     * @param CodigoBarrasCon_cadastroConsumoFatura the CodigoBarrasCon_cadastroConsumoFatura to set
      */
-    public void setInstalacao_faturanova(String Instalacao_faturanova) {
-        this.Instalacao_faturanova = Instalacao_faturanova;
+    public void setCodigoBarrasCon_cadastroConsumoFatura(String CodigoBarrasCon_cadastroConsumoFatura) {
+        this.CodigoBarrasCon_cadastroConsumoFatura = CodigoBarrasCon_cadastroConsumoFatura;
     }
 
     /**
@@ -123,5 +124,6 @@ public class RelatorioInformativoDTO {
     public void setAuditoria_cadastroConsumoFatura(String Auditoria_cadastroConsumoFatura) {
         this.Auditoria_cadastroConsumoFatura = Auditoria_cadastroConsumoFatura;
     }
+
     
 }

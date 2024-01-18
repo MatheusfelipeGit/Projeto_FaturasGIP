@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package VIEW;
 
 import DAO.EdicaoConsumoGipDAO;
@@ -45,8 +42,8 @@ public class TelaEdicaoConsumo extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         EditarTable = new javax.swing.JTable();
         EditarTxt = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        VoltarBtn = new javax.swing.JButton();
+        ApagarBtn = new javax.swing.JButton();
         AnoTxt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         MesRefTxt = new javax.swing.JTextField();
@@ -88,15 +85,15 @@ public class TelaEdicaoConsumo extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("VOLTAR");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        VoltarBtn.setText("VOLTAR");
+        VoltarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        VoltarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                VoltarBtnActionPerformed(evt);
             }
         });
 
-        jButton4.setText("APAGAR");
+        ApagarBtn.setText("APAGAR");
 
         jLabel3.setText("Ano:");
 
@@ -128,11 +125,11 @@ public class TelaEdicaoConsumo extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(VoltarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(278, 278, 278)
                 .addComponent(EditarTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ApagarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -164,9 +161,9 @@ public class TelaEdicaoConsumo extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
+                    .addComponent(VoltarBtn)
                     .addComponent(EditarTxt)
-                    .addComponent(jButton4))
+                    .addComponent(ApagarBtn))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -202,14 +199,14 @@ public class TelaEdicaoConsumo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_EditarTxtActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void VoltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtnActionPerformed
         TelaConsultaConsumo telaConsultaConsumo = new TelaConsultaConsumo();
         //esse código chama a tela selecionada pelo clique do botão selecionado
         telaConsultaConsumo.setVisible(true);
         //esse código faz a tela selecionada aparecer
 
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_VoltarBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,13 +247,13 @@ public class TelaEdicaoConsumo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AnoTxt;
+    private javax.swing.JButton ApagarBtn;
     private javax.swing.JButton BuscarTxt;
     private javax.swing.JTable EditarTable;
     private javax.swing.JButton EditarTxt;
     private javax.swing.JTextField InstalacaoTxt;
     private javax.swing.JTextField MesRefTxt;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton VoltarBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

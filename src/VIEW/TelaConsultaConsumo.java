@@ -39,10 +39,10 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
         ConsumoTxt = new javax.swing.JTable();
         MesRefTxt = new javax.swing.JTextField();
         ConsultarBtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        VoltarBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        AllTxt = new javax.swing.JTextField();
+        TodosTxt = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         AnoTxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -51,12 +51,12 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
         ValorTxt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         KwTxt = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        ExportarBtn = new javax.swing.JButton();
         InstalacaoTxt = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         TiposTxt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        EditarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela consumo fatura ");
@@ -140,11 +140,11 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("VOLTAR");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        VoltarBtn.setText("VOLTAR");
+        VoltarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        VoltarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                VoltarBtnActionPerformed(evt);
             }
         });
 
@@ -178,11 +178,11 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("KW:");
 
-        jButton2.setText("EXPORTAR");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ExportarBtn.setText("EXPORTAR");
+        ExportarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ExportarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ExportarBtnActionPerformed(evt);
             }
         });
 
@@ -193,11 +193,11 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel3.setText("TIPOS:");
 
-        jButton3.setText("EDITAR CONSUMO");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        EditarBtn.setText("EDITAR CONSUMO");
+        EditarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EditarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                EditarBtnActionPerformed(evt);
             }
         });
 
@@ -236,18 +236,18 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
                         .addGap(55, 55, 55)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ExportarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(242, 242, 242)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EditarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(VoltarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 988, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                     .addGap(230, 230, 230)
                                     .addComponent(jLabel4)
                                     .addGap(18, 18, 18)
-                                    .addComponent(AllTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TodosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(33, 33, 33)
                                     .addComponent(ConsultarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(55, Short.MAX_VALUE))
@@ -286,19 +286,19 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ConsultarBtn)
-                            .addComponent(AllTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TodosTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1))
+                                .addComponent(VoltarBtn))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton3))))
+                                .addComponent(EditarBtn))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(ExportarBtn)
                         .addContainerGap())))
         );
 
@@ -331,27 +331,27 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ConsultarBtnActionPerformed
 //////
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void VoltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtnActionPerformed
         TelaMenu telaMenu = new TelaMenu();
         telaMenu.setVisible(true);
         
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_VoltarBtnActionPerformed
 
     private void AnoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnoTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AnoTxtActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ExportarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportarBtnActionPerformed
     exportarParaPlanilha (InstalacaoTxt.getText(), MesRefTxt.getText(), AnoTxt.getText(), ValorTxt.getText(), DataTxt.getText(),KwTxt.getText(), TiposTxt.getText(), InstalacaoTxt.getText(),  MesRefTxt.getText(), AnoTxt.getText(), ValorTxt.getText(), DataTxt.getText(), KwTxt.getText(),TiposTxt.getText());
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ExportarBtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void EditarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarBtnActionPerformed
         TelaEdicaoConsumo telaEdicaoConsumo = new TelaEdicaoConsumo();
         telaEdicaoConsumo.setVisible(true);
         
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_EditarBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -390,19 +390,19 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AllTxt;
     private javax.swing.JTextField AnoTxt;
     private javax.swing.JButton ConsultarBtn;
     private javax.swing.JTable ConsumoTxt;
     private javax.swing.JTextField DataTxt;
+    private javax.swing.JButton EditarBtn;
+    private javax.swing.JButton ExportarBtn;
     private javax.swing.JTextField InstalacaoTxt;
     private javax.swing.JTextField KwTxt;
     private javax.swing.JTextField MesRefTxt;
     private javax.swing.JTextField TiposTxt;
+    private javax.swing.JTextField TodosTxt;
     private javax.swing.JTextField ValorTxt;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton VoltarBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -432,7 +432,7 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
             
             String Valor = ValorTxt.getText();
             String Tipos = TiposTxt.getText();
-            String PesqGeral = AllTxt.getText();
+            String PesqGeral = TodosTxt.getText();
             
             String Filtroinstalacao = InstalacaoTxt.getText();
             String FiltroMesRef = MesRefTxt.getText();

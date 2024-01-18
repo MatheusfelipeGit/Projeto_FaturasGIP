@@ -18,7 +18,7 @@ import org.apache.poi.ss.usermodel.Row;
 import java.util.List;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
+//import necessario para a realização de uma função/retorno especifico 
 
 public class ConsultarFaturasGipDAO {
      

@@ -50,7 +50,7 @@ public class TelaConsultarFaturas extends javax.swing.JFrame{
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         ExportBtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        EditarFaturasTxt = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -215,11 +215,11 @@ public class TelaConsultarFaturas extends javax.swing.JFrame{
             }
         });
 
-        jButton1.setText("EDITAR FATURAS");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        EditarFaturasTxt.setText("EDITAR FATURAS");
+        EditarFaturasTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EditarFaturasTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                EditarFaturasTxtActionPerformed(evt);
             }
         });
 
@@ -267,7 +267,7 @@ public class TelaConsultarFaturas extends javax.swing.JFrame{
                                 .addGap(27, 27, 27)
                                 .addComponent(ExportBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(260, 260, 260)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EditarFaturasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(346, 346, 346)
                                 .addComponent(VoltarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -345,7 +345,7 @@ public class TelaConsultarFaturas extends javax.swing.JFrame{
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ExportBtn)
                     .addComponent(VoltarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(EditarFaturasTxt))
                 .addGap(48, 48, 48))
         );
 
@@ -398,12 +398,12 @@ public class TelaConsultarFaturas extends javax.swing.JFrame{
         exportarParaPlanilha(CodInstaTxt.getText(), TiposTxt.getText(), RuaTxt.getText(), CargaLevTxt.getText(), MedidorTxt.getText(),NumeroTxt.getText(),BairroTxt.getText());
     }//GEN-LAST:event_ExportBtnActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void EditarFaturasTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarFaturasTxtActionPerformed
         TelaEdicaoFatura telaEdicao = new TelaEdicaoFatura();
         telaEdicao.setVisible(true);
         
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_EditarFaturasTxtActionPerformed
 
     public static void main(String args[]) {
         
@@ -421,13 +421,13 @@ public class TelaConsultarFaturas extends javax.swing.JFrame{
     private javax.swing.JTextField CodInstaTxt;
     private javax.swing.JButton ConsultarBtn;
     private javax.swing.JTable ConsultarTable;
+    private javax.swing.JButton EditarFaturasTxt;
     private javax.swing.JButton ExportBtn;
     private javax.swing.JTextField MedidorTxt;
     private javax.swing.JTextField NumeroTxt;
     private javax.swing.JTextField RuaTxt;
     private javax.swing.JTextField TiposTxt;
     private javax.swing.JButton VoltarBtn;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

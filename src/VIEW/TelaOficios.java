@@ -38,7 +38,7 @@ public class TelaOficios extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        VoltarBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnGerar = new javax.swing.JToggleButton();
         TipoTxt = new javax.swing.JTextField();
@@ -57,11 +57,11 @@ public class TelaOficios extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setText("Voltar");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        VoltarBtn.setText("Voltar");
+        VoltarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        VoltarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                VoltarBtnActionPerformed(evt);
             }
         });
 
@@ -104,7 +104,7 @@ public class TelaOficios extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(611, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(VoltarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,7 +161,7 @@ public class TelaOficios extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnGerar)
                 .addGap(14, 14, 14)
-                .addComponent(jButton1)
+                .addComponent(VoltarBtn)
                 .addGap(23, 23, 23))
         );
 
@@ -179,14 +179,14 @@ public class TelaOficios extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void VoltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtnActionPerformed
 
         TelaMenu telaMenu = new TelaMenu();
         telaMenu.setVisible(true);
 
         this.dispose();
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_VoltarBtnActionPerformed
 
     private void btnGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarActionPerformed
 
@@ -238,8 +238,8 @@ public class TelaOficios extends javax.swing.JFrame {
     private javax.swing.JTextField MesTxt;
     private javax.swing.JTextField OficioNumbTxt;
     private javax.swing.JTextField TipoTxt;
+    private javax.swing.JButton VoltarBtn;
     private javax.swing.JToggleButton btnGerar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

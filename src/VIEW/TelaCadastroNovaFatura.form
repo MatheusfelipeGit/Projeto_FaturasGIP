@@ -241,6 +241,7 @@
             <LineBorder/>
           </Border>
         </Property>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="InstalacaoTextField">
@@ -339,6 +340,9 @@
     <Component class="javax.swing.JTextField" name="UnidadeTxt">
     </Component>
     <Component class="javax.swing.JTextField" name="RuaTextField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RuaTextFieldActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="AvencaTxt">
       <Properties>

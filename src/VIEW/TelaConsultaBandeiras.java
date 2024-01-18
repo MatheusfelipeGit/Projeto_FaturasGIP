@@ -43,7 +43,7 @@ public class TelaConsultaBandeiras extends javax.swing.JFrame {
         ValorTxt = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        ExportarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Consulta Bandeiras");
@@ -160,11 +160,11 @@ public class TelaConsultaBandeiras extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel5.setText("Valor:");
 
-        jButton1.setText("EXPORTAR");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ExportarBtn.setText("EXPORTAR");
+        ExportarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ExportarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ExportarBtnActionPerformed(evt);
             }
         });
 
@@ -186,7 +186,7 @@ public class TelaConsultaBandeiras extends javax.swing.JFrame {
                                     .addComponent(ConsultarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ExportarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(VoltarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -238,7 +238,7 @@ public class TelaConsultaBandeiras extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VoltarBtn)
-                    .addComponent(jButton1))
+                    .addComponent(ExportarBtn))
                 .addGap(21, 21, 21))
         );
 
@@ -268,10 +268,10 @@ public class TelaConsultaBandeiras extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MesRefTxtActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ExportarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportarBtnActionPerformed
         exportarParaPlanilha(MesRefTxt.getText(), AnoTxt.getText(), ValorTxt.getText(), CorTxt.getText(), AnoTxt.getText(), CorTxt.getText());
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ExportarBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,12 +312,12 @@ public class TelaConsultaBandeiras extends javax.swing.JFrame {
     private javax.swing.JTextField AnoTxt;
     private javax.swing.JButton ConsultarBtn;
     private javax.swing.JTextField CorTxt;
+    private javax.swing.JButton ExportarBtn;
     private javax.swing.JTextField MesRefTxt;
     private javax.swing.JTable TabelaBand;
     private javax.swing.JTextField TodosTxt;
     private javax.swing.JTextField ValorTxt;
     private javax.swing.JButton VoltarBtn;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

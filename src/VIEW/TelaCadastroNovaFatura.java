@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package VIEW;
 
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
@@ -107,6 +104,7 @@ public class TelaCadastroNovaFatura extends javax.swing.JFrame {
 
         BarrasTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         BarrasTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        BarrasTextField.setName(""); // NOI18N
 
         InstalacaoTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -140,6 +138,12 @@ public class TelaCadastroNovaFatura extends javax.swing.JFrame {
         });
 
         jLabel5.setText("Unidade:");
+
+        RuaTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RuaTextFieldActionPerformed(evt);
+            }
+        });
 
         AvencaTxt.setText("Não");
         AvencaTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -367,6 +371,10 @@ public class TelaCadastroNovaFatura extends javax.swing.JFrame {
             AvencaTxt.setText("Não");
         }
     }//GEN-LAST:event_AvencaTxtActionPerformed
+
+    private void RuaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RuaTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RuaTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

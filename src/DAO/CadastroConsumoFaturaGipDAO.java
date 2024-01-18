@@ -4,14 +4,14 @@ package DAO;
 import DTO.CadastroConsumoFaturaGipDTO;
 import com.mysql.cj.jdbc.CallableStatement;
 import java.sql.Connection;
-//import necessario para a realização de uma função/retorno especifico 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
-
+//import necessario para a realização de uma função/retorno especifico 
 
 public class CadastroConsumoFaturaGipDAO {
+    
     Connection conn;  //define conn Connection
     PreparedStatement pstm;   //define pstm como preparedstatement
     ResultSet rs; //define rs como ResultSet

@@ -1,17 +1,25 @@
 
 package DTO;
 
+import java.math.BigDecimal;
+
 
 public class RelatorioInformativoDTO {
     
     private String CodigoBarrasCon_cadastroConsumoFatura;
-    private String Tipos_faturanova;
-    private String MesReferente_cadastroConsumoFatura;
-    private String Ano_cadastroConsumoFatura;
-    private String Valor_cadastroConsumoFatura;
-    private String Kw_cadastroConsumoFatura;
-    private String CodBarrasRed_cadastroConsumoFatura;
-    private String Auditoria_cadastroConsumoFatura;
+    private String Jan;
+    private String Fev;
+    private String Mar;
+    private String Abril;
+    private String Maio;
+    private String Jun;
+    private String Jul;
+    private String Ago;
+    private String Setem;
+    private String Outb;
+    private String Nov;
+    private String Dez;
+    private String Mediafinal;
 
     /**
      * @return the CodigoBarrasCon_cadastroConsumoFatura
@@ -28,102 +36,186 @@ public class RelatorioInformativoDTO {
     }
 
     /**
-     * @return the Tipos_faturanova
+     * @return the Jan
      */
-    public String getTipos_faturanova() {
-        return Tipos_faturanova;
+    public String getJan() {
+        return Jan;
     }
 
     /**
-     * @param Tipos_faturanova the Tipos_faturanova to set
+     * @param Jan the Jan to set
      */
-    public void setTipos_faturanova(String Tipos_faturanova) {
-        this.Tipos_faturanova = Tipos_faturanova;
+    public void setJan(String Jan) {
+        this.Jan = Jan;
     }
 
     /**
-     * @return the MesReferente_cadastroConsumoFatura
+     * @return the Fev
      */
-    public String getMesReferente_cadastroConsumoFatura() {
-        return MesReferente_cadastroConsumoFatura;
+    public String getFev() {
+        return Fev;
     }
 
     /**
-     * @param MesReferente_cadastroConsumoFatura the MesReferente_cadastroConsumoFatura to set
+     * @param Fev the Fev to set
      */
-    public void setMesReferente_cadastroConsumoFatura(String MesReferente_cadastroConsumoFatura) {
-        this.MesReferente_cadastroConsumoFatura = MesReferente_cadastroConsumoFatura;
+    public void setFev(String Fev) {
+        this.Fev = Fev;
     }
 
     /**
-     * @return the Ano_cadastroConsumoFatura
+     * @return the Mar
      */
-    public String getAno_cadastroConsumoFatura() {
-        return Ano_cadastroConsumoFatura;
+    public String getMar() {
+        return Mar;
     }
 
     /**
-     * @param Ano_cadastroConsumoFatura the Ano_cadastroConsumoFatura to set
+     * @param Mar the Mar to set
      */
-    public void setAno_cadastroConsumoFatura(String Ano_cadastroConsumoFatura) {
-        this.Ano_cadastroConsumoFatura = Ano_cadastroConsumoFatura;
+    public void setMar(String Mar) {
+        this.Mar = Mar;
     }
 
     /**
-     * @return the Valor_cadastroConsumoFatura
+     * @return the Abril
      */
-    public String getValor_cadastroConsumoFatura() {
-        return Valor_cadastroConsumoFatura;
+    public String getAbril() {
+        return Abril;
     }
 
     /**
-     * @param Valor_cadastroConsumoFatura the Valor_cadastroConsumoFatura to set
+     * @param Abril the Abril to set
      */
-    public void setValor_cadastroConsumoFatura(String Valor_cadastroConsumoFatura) {
-        this.Valor_cadastroConsumoFatura = Valor_cadastroConsumoFatura;
+    public void setAbril(String Abril) {
+        this.Abril = Abril;
     }
 
     /**
-     * @return the Kw_cadastroConsumoFatura
+     * @return the Maio
      */
-    public String getKw_cadastroConsumoFatura() {
-        return Kw_cadastroConsumoFatura;
+    public String getMaio() {
+        return Maio;
     }
 
     /**
-     * @param Kw_cadastroConsumoFatura the Kw_cadastroConsumoFatura to set
+     * @param Maio the Maio to set
      */
-    public void setKw_cadastroConsumoFatura(String Kw_cadastroConsumoFatura) {
-        this.Kw_cadastroConsumoFatura = Kw_cadastroConsumoFatura;
+    public void setMaio(String Maio) {
+        this.Maio = Maio;
     }
 
     /**
-     * @return the CodBarrasRed_cadastroConsumoFatura
+     * @return the Jun
      */
-    public String getCodBarrasRed_cadastroConsumoFatura() {
-        return CodBarrasRed_cadastroConsumoFatura;
+    public String getJun() {
+        return Jun;
     }
 
     /**
-     * @param CodBarrasRed_cadastroConsumoFatura the CodBarrasRed_cadastroConsumoFatura to set
+     * @param Jun the Jun to set
      */
-    public void setCodBarrasRed_cadastroConsumoFatura(String CodBarrasRed_cadastroConsumoFatura) {
-        this.CodBarrasRed_cadastroConsumoFatura = CodBarrasRed_cadastroConsumoFatura;
+    public void setJun(String Jun) {
+        this.Jun = Jun;
     }
 
     /**
-     * @return the Auditoria_cadastroConsumoFatura
+     * @return the Jul
      */
-    public String getAuditoria_cadastroConsumoFatura() {
-        return Auditoria_cadastroConsumoFatura;
+    public String getJul() {
+        return Jul;
     }
 
     /**
-     * @param Auditoria_cadastroConsumoFatura the Auditoria_cadastroConsumoFatura to set
+     * @param Jul the Jul to set
      */
-    public void setAuditoria_cadastroConsumoFatura(String Auditoria_cadastroConsumoFatura) {
-        this.Auditoria_cadastroConsumoFatura = Auditoria_cadastroConsumoFatura;
+    public void setJul(String Jul) {
+        this.Jul = Jul;
     }
 
-    
+    /**
+     * @return the Ago
+     */
+    public String getAgo() {
+        return Ago;
+    }
+
+    /**
+     * @param Ago the Ago to set
+     */
+    public void setAgo(String Ago) {
+        this.Ago = Ago;
+    }
+
+    /**
+     * @return the Setem
+     */
+    public String getSetem() {
+        return Setem;
+    }
+
+    /**
+     * @param Setem the Setem to set
+     */
+    public void setSetem(String Setem) {
+        this.Setem = Setem;
+    }
+
+    /**
+     * @return the Outb
+     */
+    public String getOutb() {
+        return Outb;
+    }
+
+    /**
+     * @param Outb the Outb to set
+     */
+    public void setOutb(String Outb) {
+        this.Outb = Outb;
+    }
+
+    /**
+     * @return the Nov
+     */
+    public String getNov() {
+        return Nov;
+    }
+
+    /**
+     * @param Nov the Nov to set
+     */
+    public void setNov(String Nov) {
+        this.Nov = Nov;
+    }
+
+    /**
+     * @return the Dez
+     */
+    public String getDez() {
+        return Dez;
+    }
+
+    /**
+     * @param Dez the Dez to set
+     */
+    public void setDez(String Dez) {
+        this.Dez = Dez;
+    }
+
+    /**
+     * @return the Mediafinal
+     */
+    public String getMediafinal() {
+        return Mediafinal;
+    }
+
+    /**
+     * @param Mediafinal the Mediafinal to set
+     */
+    public void setMediafinal(String Mediafinal) {
+        this.Mediafinal = Mediafinal;
+    }
+
+   
 }

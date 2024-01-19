@@ -55,13 +55,13 @@ public class RelatorioInformativo extends javax.swing.JFrame {
         TabelaInformativo.setForeground(new java.awt.Color(204, 204, 204));
         TabelaInformativo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
+                "Barras", "Jan", "Fev", "Mar", "Abril", "Maio", "Jun", "Jul", "Ago", "Setem", "Outb", "Nov", "Dez", "Mediafinal"
             }
         ));
         jScrollPane2.setViewportView(TabelaInformativo);
@@ -231,21 +231,24 @@ private void listarValores() {
 
             String Barras = InstTxt.getText();
 
-            String Tipo = TipoTxt.getText();
-
-            String Ano = AnoTxt.getText();
-            
-            List<RelatorioInformativoDTO> lista = relatorioInformativodao.RelatorioInfo(Barras, Tipo, Ano);
+            List<RelatorioInformativoDTO> lista = relatorioInformativodao.RelatorioInfo(Barras);
 
             for (int i = 0; i < lista.size(); i++) {
                 model.addRow(new Object[]{
                     lista.get(i).getCodigoBarrasCon_cadastroConsumoFatura(),
-                    lista.get(i).getTipos_faturanova(),
-                    lista.get(i).getMesReferente_cadastroConsumoFatura(),
-                    lista.get(i).getAno_cadastroConsumoFatura(),
-                    lista.get(i).getValor_cadastroConsumoFatura(),
-                    lista.get(i).getKw_cadastroConsumoFatura(),
-                    lista.get(i).getCodBarrasRed_cadastroConsumoFatura(),});
+                    lista.get(i).getJan(),
+                    lista.get(i).getFev(),
+                    lista.get(i).getMar(),
+                    lista.get(i).getAbril(),
+                    lista.get(i).getMaio(),
+                    lista.get(i).getJun(),
+                    lista.get(i).getJul(),
+                    lista.get(i).getAgo(),
+                    lista.get(i).getSetem(),
+                    lista.get(i).getOutb(),
+                    lista.get(i).getNov(),
+                    lista.get(i).getDez(),
+                    lista.get(i).getMediafinal(),});
             }
 
         } catch (Exception erro) {

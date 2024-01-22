@@ -52,6 +52,8 @@ public class TelaMenu extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Menu");
@@ -225,7 +227,7 @@ public class TelaMenu extends javax.swing.JFrame {
         });
         jMenu6.add(jMenuItem9);
 
-        jMenuItem10.setText("Relatórios");
+        jMenuItem10.setText("Relatório Auditoria");
         jMenuItem10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,6 +235,12 @@ public class TelaMenu extends javax.swing.JFrame {
             }
         });
         jMenu6.add(jMenuItem10);
+
+        jMenuItem12.setText("Relatório Quantidade");
+        jMenu6.add(jMenuItem12);
+
+        jMenuItem13.setText("Relatório Controle");
+        jMenu6.add(jMenuItem13);
 
         jMenuBar1.add(jMenu6);
 
@@ -388,6 +396,8 @@ public class TelaMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

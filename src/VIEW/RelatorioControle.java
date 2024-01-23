@@ -15,6 +15,7 @@ public class RelatorioControle extends javax.swing.JFrame {
      */
     public RelatorioControle() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

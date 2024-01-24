@@ -237,6 +237,11 @@ public class TelaMenu extends javax.swing.JFrame {
         jMenu6.add(jMenuItem10);
 
         jMenuItem12.setText("Relatório Quantidade");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem12);
 
         jMenuItem13.setText("Relatório Controle");
@@ -348,6 +353,13 @@ public class TelaMenu extends javax.swing.JFrame {
     private void nomeUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeUserActionPerformed
         
     }//GEN-LAST:event_nomeUserActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        RelatorioQuantidade relatorioQuantidade = new RelatorioQuantidade();
+        relatorioQuantidade.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     /**
      * @param args the command line arguments

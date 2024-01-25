@@ -122,7 +122,7 @@ public class TelaMenu extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem3.setText("Cadastrar nova fatura");
+        jMenuItem3.setText("Cadastrar Nova Fatura");
         jMenuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

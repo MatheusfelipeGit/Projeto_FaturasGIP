@@ -1,6 +1,7 @@
 
 package DAO;
 
+import DTO.RelatorioGipDTO;
 import DTO.RelatorioQuantidadeDTO;
 import com.mysql.cj.jdbc.CallableStatement;
 import java.io.FileOutputStream;
@@ -14,6 +15,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import java.util.List;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 
@@ -32,23 +37,10 @@ public List<RelatorioQuantidadeDTO> RelatorioQuantidade() {
     try{
         //função de buscar
         String sql = "SELECT * FROM Armaz";
-        
-        
-          /*  + "LEFT JOIN "
-            + "cadastroconsumofatura "
-            + "ON "
-            + "faturanova.CodBarrasRed_faturanova = cadastroconsumofatura.CodBarrasRed_cadastroConsumoFatura "
-            + "WHERE "
-            + "cadastroconsumofatura.MesReferente_cadastroConsumoFatura = ? "
-            + "GROUP BY faturanova.Tipos_faturanova"*/                   //função para ver quantidade total
+    
         
         pstm = conn.prepareStatement(sql);
 
-       // pstm.setString(1,BarrasRedConsumo);
-       // pstm.setString(2,BarrasRedFatura);
-       // pstm.setString(1,MesReferente);
-     //   pstm.setString(2,Tipos);
-        
         rs = pstm.executeQuery();
         
         while(rs.next()) {
@@ -57,12 +49,6 @@ public List<RelatorioQuantidadeDTO> RelatorioQuantidade() {
             objrelatorioquantidadedto.setQuantidadeTotal_Armaz(rs.getString("QuantidadeTotal_Armaz"));
             objrelatorioquantidadedto.setTipo_Armaz(rs.getString("Tipo_Armaz"));
             
-           
-            
-          //  objrelatorioquantidadedto.setCodBarrasRed_cadastroConsumoFatura(rs.getString("CodBarrasRed_cadastroConsumoFatura"));
-         //   objrelatorioquantidadedto.setMesReferente_cadastroConsumoFatura(rs.getString("MesReferente_cadastroConsumoFatura"));
-         //   objrelatorioquantidadedto.setTipos_faturanova(rs.getString("Tipos_faturanova"));
-           // objrelatorioquantidadedto.setCodBarrasRed_faturanova(rs.getString("CodBarrasRed_faturanova"));
             
             lista.add(objrelatorioquantidadedto);
      
@@ -76,5 +62,61 @@ public List<RelatorioQuantidadeDTO> RelatorioQuantidade() {
     }
     return lista;
 }
+    public void chamarProcedure() throws SQLException { // esse throws é quando não se trata no próprio método
+            Connection conn = null;
+            CallableStatement callableStatement = null;
 
+            try {
+                conn = new ConexaoGipDAO().conectaBD();
+                // Assume que você tem uma classe de conexão separada
+
+                // Chama a procedure usando CallableStatement
+                String sqlProcedure = "{CALL MediaeAuditoria}";
+                callableStatement = (CallableStatement) conn.prepareCall(sqlProcedure);
+                callableStatement.execute();
+            } finally {
+                // Fecha o CallableStatement e a conexão
+                if (callableStatement != null) {
+                    callableStatement.close();
+                }
+                if (conn != null && !conn.isClosed()) {
+                    conn.close();
+             
+                }
+            }
+        }
+    
+       public void exportarParaPlanilha(List<RelatorioQuantidadeDTO> listar, String filePath) {
+    
+        try (Workbook workbook = new XSSFWorkbook()) {
+        Sheet sheet = workbook.createSheet("Dados"); // Cria uma nova planilha com o nome "Dados"
+
+        int rowIndex = 0;
+        Row headerRow = sheet.createRow(rowIndex++);
+
+        // Define o cabeçalho das colunas da planilha
+            headerRow.createCell(0).setCellValue("QuantidadeTotal_Armaz");
+            headerRow.createCell(1).setCellValue("Tipo_Armaz");
+          
+
+            // Preenche os dados na planilha a partir da lista de DTOs
+            for (RelatorioQuantidadeDTO dto : listar) {
+                Row dataRow = sheet.createRow(rowIndex++);
+                dataRow.createCell(0).setCellValue(dto.getQuantidadeTotal_Armaz());
+                dataRow.createCell(1).setCellValue(dto.getTipo_Armaz());
+
+            }
+
+        // mensagem que avisa oonde a planilha está/ Salva a mesma
+        try (FileOutputStream outputStream = new FileOutputStream(filePath)) {
+            workbook.write(outputStream);
+            
+            System.out.println("Planilha exportada com sucesso para: " + filePath);
+        }
+        
+         
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 }

@@ -81,7 +81,7 @@ public class EdicaoConsumoGipDAO {
             String sql = "UPDATE `faturasgip`.`cadastroConsumoFatura` "
                     + "INNER JOIN faturanova ON CodBarrasRed_faturanova = CodBarrasRed_cadastroConsumoFatura "
                     + "SET "
-                     + "Instalacao_faturanova = ?, "
+                    + "Instalacao_faturanova = ?, "
                     + "CodigoBarrasCon_cadastroConsumoFatura = ?, "
                     + "Valor_cadastroConsumoFatura = ?, "
                     + "Kw_cadastroConsumoFatura = ?, "

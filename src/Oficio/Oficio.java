@@ -8,6 +8,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -74,7 +76,10 @@ public class Oficio implements ActionListener {
         JasperReport relatorio = (JasperReport) JRLoader.loadObjectFromFile(jasper);
         bytes = JasperRunManager.runReportToPdf(relatorio, param, new ConexaoGipDAO().conectaBD());
         
-        File arq = new File ("C:\\Users\\jateixeira\\Desktop\\MyReports-teste", tipo +".pdf"); //esse é o tipo novo que vao abrir 
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
+        String timestamp = dateFormat.format(new Date());
+        
+        File arq = new File ("C:\\Users\\jateixeira\\Desktop\\OFÍCIOS", tipo + OficioNumb + ".pdf"); //esse é o tipo novo que vao abrir 
         /*if (arq.exists()){
             arq.delete(); //
         }*/

@@ -30,18 +30,15 @@ public class RelatorioInformativoDAO {
     
     List<RelatorioInformativoDTO> lista = new ArrayList<>();
    
-    public List<RelatorioInformativoDTO> RelatorioInfo (String BarrasRed) {
+    public List<RelatorioInformativoDTO> RelatorioInfo (String Ano) {
         
         conn = new ConexaoGipDAO().conectaBD(); //chama a conexão com a String conn para conecta bd
         
         try{
-            String sql = "SELECT * FROM medias " +
-                    "INNER JOIN cadastroConsumoFatura ON CodBarrasRed_medias = cadastroConsumoFatura.CodBarrasRed_cadastroConsumoFatura " +
-                    "WHERE cadastroConsumoFatura.CodBarrasRed_cadastroConsumoFatura = ?";
+            String sql = "SELECT * FROM ResultadosTemporarios " ;
             
             pstm = conn.prepareStatement(sql);
             
-            pstm.setString(1, BarrasRed);
             
             rs = pstm.executeQuery();
             
@@ -49,8 +46,23 @@ public class RelatorioInformativoDAO {
                 
                 RelatorioInformativoDTO objrelatoriogipdto = new RelatorioInformativoDTO();
                 
-                objrelatoriogipdto.setCodBarrasRed_cadastroConsumoFatura(rs.getString("CodBarrasRed_cadastroConsumoFatura"));
-                objrelatoriogipdto.setCodBarrasRed_medias(rs.getString("CodBarrasRed_medias"));
+                objrelatoriogipdto.setCodigoBarrasCon_cadastroConsumoFatura(rs.getString("CodigoBarrasCon_cadastroConsumoFatura")); 
+                objrelatoriogipdto.setCodBarrasRed_cadastroConsumoFatura(rs.getString("CodBarrasRed_cadastroConsumoFatura")); 
+                objrelatoriogipdto.setJan(rs.getString("Jan")); 
+                objrelatoriogipdto.setFev(rs.getString("Fev")); 
+                objrelatoriogipdto.setMar(rs.getString("Mar")); 
+                objrelatoriogipdto.setAbril(rs.getString("Abril")); 
+                objrelatoriogipdto.setMaio(rs.getString("Maio")); 
+                objrelatoriogipdto.setJun(rs.getString("Jun")); 
+                objrelatoriogipdto.setJul(rs.getString("Jul")); 
+                objrelatoriogipdto.setAgo(rs.getString("Ago")); 
+                objrelatoriogipdto.setSetem(rs.getString("Setem")); 
+                objrelatoriogipdto.setOutb(rs.getString("Outb")); 
+                objrelatoriogipdto.setNov(rs.getString("Nov")); 
+                objrelatoriogipdto.setDez(rs.getString("Dez")); 
+                objrelatoriogipdto.setMediaFinal(rs.getString("MediaFinal")); 
+                
+                
                 
                 lista.add(objrelatoriogipdto);
             }
@@ -63,5 +75,30 @@ public class RelatorioInformativoDAO {
         
         return lista;
     }
-    
+    public void chamarProcedure(String AnoRefs) throws SQLException {
+        java.sql.Connection conn = null;
+        CallableStatement callableStatement = null;
+
+        try { 
+            conn = new ConexaoGipDAO().conectaBD();
+            // Assume que você tem uma classe de conexão separada
+            
+            // Chama a procedure usando CallableStatement
+            String sqlProcedure = "{call TesteInformativo(?)}";
+            
+            callableStatement = (CallableStatement) conn.prepareCall(sqlProcedure);
+            callableStatement.setString(1, AnoRefs);
+            
+            callableStatement.execute();
+        } finally {
+            // Fecha o CallableStatement e a conexão
+            if (callableStatement != null) {
+                callableStatement.close();
+            }
+            if (conn != null && !conn.isClosed()) {
+                conn.close();
+                //esse código é para fazer o calculo automático do kw 
+            }
+        }
+    }
 }

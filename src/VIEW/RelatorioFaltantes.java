@@ -1,0 +1,240 @@
+
+package VIEW;
+
+import DAO.RelatorioFaltantesDAO;
+import DTO.RelatorioFaltantesDTO;
+import com.mysql.cj.jdbc.CallableStatement;
+import java.sql.SQLException;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+
+import DAO.ConexaoGipDAO;
+
+
+public class RelatorioFaltantes extends javax.swing.JFrame {
+
+    
+    public RelatorioFaltantes() {
+        initComponents();
+        AutoCompleteDecorator.decorate(MesBox); //serve para ele dar a opção das letras que vc vai digitando
+        this.setLocationRelativeTo(null);
+    }
+
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        MesBox = new javax.swing.JComboBox<>();
+        BuscaBtn = new javax.swing.JButton();
+        VoltarBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setText("FALTANTES");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Id", "Reduzido", "StatusMensal"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        MesBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro", "Diversas Atrasadas" }));
+
+        BuscaBtn.setText("BUSCAR");
+        BuscaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscaBtnActionPerformed(evt);
+            }
+        });
+
+        VoltarBtn.setText("VOLTAR");
+        VoltarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VoltarBtnActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("EXPORTAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(235, 235, 235)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(92, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(VoltarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(MesBox, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BuscaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(79, 79, 79))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jLabel1)
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(MesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BuscaBtn))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(VoltarBtn)
+                    .addComponent(jButton1))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void VoltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtnActionPerformed
+       RelatorioMensal relatorioMensal = new RelatorioMensal();
+       relatorioMensal.setVisible(true);
+       
+       this.dispose();
+    }//GEN-LAST:event_VoltarBtnActionPerformed
+
+    private void BuscaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscaBtnActionPerformed
+         try {
+             chamarProcedure((String)MesBox.getSelectedItem()); // Chama a procedure no DAO
+            //COMO TEM CONDIÇÃO, MES REFERENTE SERVE COMO VARIAVEL DE PESQUISA E JOGA PRO BANCO TUDO QUE ENTRA NO TXTMESREF
+        } catch (Exception e) {
+            // Trate exceções aqui
+            e.printStackTrace();
+        }
+     
+        try{ 
+             listarValores();
+         }catch(Exception erro){
+             JOptionPane.showMessageDialog(null, "erro listagem" + erro);
+             }
+    }//GEN-LAST:event_BuscaBtnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       exportarParaPlanilha();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+   
+    public static void main(String args[]) {
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new RelatorioFaltantes().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BuscaBtn;
+    private javax.swing.JComboBox<String> MesBox;
+    private javax.swing.JButton VoltarBtn;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    // End of variables declaration//GEN-END:variables
+private void listarValores() {
+        try {
+            RelatorioFaltantesDAO relatoriofaltantes = new RelatorioFaltantesDAO();
+
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setNumRows(0);
+
+            
+
+            List<RelatorioFaltantesDTO> lista = relatoriofaltantes.RelatorioFaltantes();
+
+            for (int i = 0; i < lista.size(); i++) {
+                model.addRow(new Object[]{
+                    lista.get(i).getID(),
+                     lista.get(i).getReduzido(),
+                     lista.get(i).getStatusMensal(),});
+            }
+
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "listarValores" + erro);
+        }
+    }
+private void exportarParaPlanilha() {
+        RelatorioFaltantesDAO dao = new RelatorioFaltantesDAO();
+        List<RelatorioFaltantesDTO> listaConsultas = dao.RelatorioFaltantes(); // Chamada correta
+        String DocumentsTeste = "C:\\Users\\jateixeira\\Desktop\\planilhas exportadas\\relatórioFaltantes.xlsx"; //ajusta o caminho p achar a planilha
+
+        dao.exportarParaPlanilha(listaConsultas, DocumentsTeste);
+
+        JOptionPane.showMessageDialog(null, "EXPORTADO COM SUCESSO!!");}
+
+public void chamarProcedure(String MesRef) throws SQLException {
+        java.sql.Connection conn = null;
+        CallableStatement callableStatement = null;
+
+        try { 
+            conn = new ConexaoGipDAO().conectaBD();
+            // Assume que você tem uma classe de conexão separada
+            
+            // Chama a procedure usando CallableStatement
+            String sqlProcedure = "{call testeStatusMensal(?)}";
+            
+            callableStatement = (CallableStatement) conn.prepareCall(sqlProcedure);
+            callableStatement.setString(1, MesRef);
+            callableStatement.execute();
+        } finally {
+            // Fecha o CallableStatement e a conexão
+            if (callableStatement != null) {
+                callableStatement.close();
+            }
+            if (conn != null && !conn.isClosed()) {
+                conn.close();
+                //esse código é para fazer o calculo automático do kw 
+            }
+        }
+    }
+}

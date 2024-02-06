@@ -78,7 +78,7 @@ public class TelaCadastroNovaFatura extends javax.swing.JFrame {
             }
         });
 
-        TiposComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Saúde", "Educação", "PP", "Praça", "SC", "Ruas", "VD", "IP" }));
+        TiposComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Saúde", "Escola", "PP", "Praça", "SC", "Ruas", "VD", "IP" }));
         TiposComboBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TiposComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -24,6 +24,7 @@ public class TelaCadastroNovaFatura extends javax.swing.JFrame {
         AutoCompleteDecorator.decorate(TiposComboBox);
         setExtendedState((int) CENTER_ALIGNMENT);
         this.setLocationRelativeTo(null);
+         
     
     }
 
@@ -67,6 +68,7 @@ public class TelaCadastroNovaFatura extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro Nova Fatura:");
         setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Cadastro Nova Instalação:");

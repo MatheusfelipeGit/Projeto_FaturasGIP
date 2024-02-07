@@ -31,6 +31,7 @@ public class TelaLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -126,7 +127,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SairBtn)
                     .addComponent(LogBtn))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,10 +141,7 @@ public class TelaLogin extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -174,7 +172,8 @@ public class TelaLogin extends javax.swing.JFrame {
 
                 String nomeUsuario = rslogingipdao.getString("NomeCompleto_usuario");
 
-                JOptionPane.showMessageDialog(null, "LOGIN REALIZADO COM SUCESSO!" + nomeUsuario );
+               JOptionPane.showMessageDialog(null, "LOGIN REALIZADO COM SUCESSO!" );
+                    JOptionPane.showMessageDialog(null, "BEM VINDO(A)"     +    nomeUsuario );
 
                 TelaMenu telaMenu = new TelaMenu();
                 telaMenu.setVisible(true);
@@ -229,7 +228,8 @@ public class TelaLogin extends javax.swing.JFrame {
                     String nomeUsuario = rslogingipdao.getString("NomeCompleto_usuario");
                     // Define o texto do campo nomeUser com o nome do usuário
 
-                    JOptionPane.showMessageDialog(null, "LOGIN REALIZADO COM SUCESSO!");
+                    JOptionPane.showMessageDialog(null, "LOGIN REALIZADO COM SUCESSO!" );
+                    JOptionPane.showMessageDialog(null, "BEM VINDO(A)" +    nomeUsuario );
 
                     TelaMenu telaMenu = new TelaMenu();
                     telaMenu.setVisible(true);

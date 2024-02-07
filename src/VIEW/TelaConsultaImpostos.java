@@ -46,6 +46,7 @@ public class TelaConsultaImpostos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de Consulta de Impostos");
+        setResizable(false);
 
         VoltarBtn.setText("VOLTAR");
         VoltarBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

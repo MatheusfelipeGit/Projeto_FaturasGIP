@@ -173,7 +173,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 String nomeUsuario = rslogingipdao.getString("NomeCompleto_usuario");
 
                JOptionPane.showMessageDialog(null, "LOGIN REALIZADO COM SUCESSO!" );
-                    JOptionPane.showMessageDialog(null, "BEM VINDO(A)"     +    nomeUsuario );
+                    JOptionPane.showMessageDialog(null, "BEM VINDO(A)   " + nomeUsuario );
 
                 TelaMenu telaMenu = new TelaMenu();
                 telaMenu.setVisible(true);
@@ -229,7 +229,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     // Define o texto do campo nomeUser com o nome do usuário
 
                     JOptionPane.showMessageDialog(null, "LOGIN REALIZADO COM SUCESSO!" );
-                    JOptionPane.showMessageDialog(null, "BEM VINDO(A)" +    nomeUsuario );
+                    JOptionPane.showMessageDialog(null, "BEM VINDO(A)    "+nomeUsuario );
 
                     TelaMenu telaMenu = new TelaMenu();
                     telaMenu.setVisible(true);

@@ -5,23 +5,6 @@ import java.math.BigDecimal;
 
 
 public class RelatorioInformativoDTO {
-    
-    private String CodigoBarrasCon_cadastroConsumoFatura;
-    private String CodBarrasRed_cadastroConsumoFatura;
-    private String jan;
-    private String fev;
-    private String mar;
-    private String abril;
-    private String maio;
-    private String jun;
-    private String jul;
-    private String ago;
-    private String setem;
-    private String outb;
-    private String nov;
-    private String dez;
-    private String MediaFinal;
-    private String AnoRefs;
 
     /**
      * @return the CodigoBarrasCon_cadastroConsumoFatura
@@ -246,5 +229,39 @@ public class RelatorioInformativoDTO {
     public void setAnoRefs(String AnoRefs) {
         this.AnoRefs = AnoRefs;
     }
+
+    /**
+     * @return the Auditoria_cadastroConsumoFatura
+     */
+    public String getAuditoria_cadastroConsumoFatura() {
+        return Auditoria_cadastroConsumoFatura;
+    }
+
+    /**
+     * @param Auditoria_cadastroConsumoFatura the Auditoria_cadastroConsumoFatura to set
+     */
+    public void setAuditoria_cadastroConsumoFatura(String Auditoria_cadastroConsumoFatura) {
+        this.Auditoria_cadastroConsumoFatura = Auditoria_cadastroConsumoFatura;
+    }
+    
+    private String CodigoBarrasCon_cadastroConsumoFatura;
+    private String CodBarrasRed_cadastroConsumoFatura;
+    private String jan;
+    private String fev;
+    private String mar;
+    private String abril;
+    private String maio;
+    private String jun;
+    private String jul;
+    private String ago;
+    private String setem;
+    private String outb;
+    private String nov;
+    private String dez;
+    private String MediaFinal;
+    private String AnoRefs;
+    private String Auditoria_cadastroConsumoFatura;
+
+    
 
 }

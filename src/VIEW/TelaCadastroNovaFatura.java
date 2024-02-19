@@ -139,6 +139,12 @@ public class TelaCadastroNovaFatura extends javax.swing.JFrame {
             }
         });
 
+        ReduzidoTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReduzidoTxtActionPerformed(evt);
+            }
+        });
+
         jLabel5.setText("Unidade:");
 
         RuaTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -269,8 +275,8 @@ public class TelaCadastroNovaFatura extends javax.swing.JFrame {
                 int length = text.length();
                 String lastSixChars = "";
 
-                if (length >= 6) {
-                    lastSixChars = text.substring(length - 6);
+                if (length >= 8) {
+                    lastSixChars = text.substring(length - 8);
                 } else {
                     lastSixChars = text;
                 }
@@ -377,6 +383,10 @@ public class TelaCadastroNovaFatura extends javax.swing.JFrame {
     private void RuaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RuaTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RuaTextFieldActionPerformed
+
+    private void ReduzidoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReduzidoTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ReduzidoTxtActionPerformed
 
     /**
      * @param args the command line arguments

@@ -326,8 +326,8 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
         int length = text.length();
         String lastSixChars = "";
 
-        if (length >= 6) {
-            lastSixChars = text.substring(length - 6);
+        if (length >= 8) {
+            lastSixChars = text.substring(length - 8);
         } else {
             lastSixChars = text;
         }
@@ -445,8 +445,8 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
             int length = text.length();
             String lastSixChars = "";
 
-            if (length >= 6) {
-                lastSixChars = text.substring(length - 6);
+            if (length >= 8) {
+                lastSixChars = text.substring(length - 8);
             } else {
                 lastSixChars = text;
             }
@@ -537,8 +537,8 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
             int length = text.length();
             String lastSixChars = "";
 
-            if (length >= 6) {
-                lastSixChars = text.substring(length - 6);
+            if (length >= 8) {
+                lastSixChars = text.substring(length - 8);
             } else {
                 lastSixChars = text;
             }

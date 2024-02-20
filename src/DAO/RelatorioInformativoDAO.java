@@ -30,7 +30,7 @@ public class RelatorioInformativoDAO {
     
     List<RelatorioInformativoDTO> lista = new ArrayList<>();
    
-    public List<RelatorioInformativoDTO> RelatorioInfo (String Ano,String Auditoria) {
+    public List<RelatorioInformativoDTO> RelatorioInfo (String Ano, String Auditoria) {
         
         conn = new ConexaoGipDAO().conectaBD(); //chama a conexão com a String conn para conecta bd
         
@@ -60,6 +60,7 @@ public class RelatorioInformativoDAO {
                 objrelatoriogipdto.setOutb(rs.getString("Outb")); 
                 objrelatoriogipdto.setNov(rs.getString("Nov")); 
                 objrelatoriogipdto.setDez(rs.getString("Dez")); 
+                objrelatoriogipdto.setDivatrasadas(rs.getString("divatrasadas")); 
                 objrelatoriogipdto.setMediaFinal(rs.getString("MediaFinal")); 
                 objrelatoriogipdto.setAuditoria_cadastroConsumoFatura(rs.getString("Auditoria_cadastroConsumoFatura")); 
                 
@@ -124,8 +125,9 @@ public class RelatorioInformativoDAO {
             headerRow.createCell(10).setCellValue("Out");
             headerRow.createCell(11).setCellValue("Nov");
             headerRow.createCell(12).setCellValue("Dez");
-            headerRow.createCell(13).setCellValue("mediaFinal");
-            headerRow.createCell(14).setCellValue("Auditoria");
+            headerRow.createCell(13).setCellValue("divatrasadas");
+            headerRow.createCell(14).setCellValue("mediaFinal");
+            headerRow.createCell(15).setCellValue("Auditoria");
 
             // Preenche os dados na planilha a partir da lista de DTOs
             for (RelatorioInformativoDTO dto : listar) {
@@ -143,8 +145,9 @@ public class RelatorioInformativoDAO {
                 dataRow.createCell(10).setCellValue(dto.getOutb());
                 dataRow.createCell(11).setCellValue(dto.getNov());
                 dataRow.createCell(12).setCellValue(dto.getDez());
-                dataRow.createCell(13).setCellValue(dto.getMediaFinal());
-                dataRow.createCell(14).setCellValue(dto.getAuditoria_cadastroConsumoFatura());
+                dataRow.createCell(13).setCellValue(dto.getDivatrasadas());
+                dataRow.createCell(14).setCellValue(dto.getMediaFinal());
+                dataRow.createCell(15).setCellValue(dto.getAuditoria_cadastroConsumoFatura());
             }
 
         // mensagem que avisa oonde a planilha está/ Salva a mesma

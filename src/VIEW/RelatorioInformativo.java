@@ -65,20 +65,20 @@ public class RelatorioInformativo extends javax.swing.JFrame {
 
         TabelaInformativo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Barras Red", "Jan", "Fev", "Mar", "Abril", "Maio", "Jun", "Jul", "Ago", "Setem", "Out", "Nov", "Dez", "Media Final", "Auditoria"
+                "Barras Red", "Jan", "Fev", "Mar", "Abril", "Maio", "Jun", "Jul", "Ago", "Setem", "Out", "Nov", "Dez", "Diversas", "Media Final", "Auditoria"
             }
         ));
         jScrollPane1.setViewportView(TabelaInformativo);
 
-        AuditoriaSimNao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sim", "Não" }));
+        AuditoriaSimNao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Sim", "Não" }));
 
         jLabel2.setText("AUDITORIA:");
 
@@ -163,13 +163,13 @@ public class RelatorioInformativo extends javax.swing.JFrame {
         try{ 
              chamarProcedure(AnoTxt.getText(), (String)AuditoriaSimNao.getSelectedItem());
          }catch(Exception erro){
-             JOptionPane.showMessageDialog(null, "erro listagem" + erro);
+             JOptionPane.showMessageDialog(null, "erro listagem1" + erro);
              }    
                
         try{ 
              listarValores();
          }catch(Exception erro){
-             JOptionPane.showMessageDialog(null, "erro listagem" + erro);
+             JOptionPane.showMessageDialog(null, "erro listagem2" + erro);
              }    
     }//GEN-LAST:event_BuscarBtnActionPerformed
 
@@ -262,13 +262,14 @@ private void listarValores() {
                  lista.get(i).getOutb(),
                  lista.get(i).getNov(),
                  lista.get(i).getDez(),
+                 lista.get(i).getDivatrasadas(),
                  lista.get(i).getMediaFinal(),
                  lista.get(i).getAuditoria_cadastroConsumoFatura(),
                 });
             }
 
         } catch (Exception erro) {
-            JOptionPane.showMessageDialog(null, "listarValores" + erro);
+            JOptionPane.showMessageDialog(null, "listarValores3" + erro);
         }
         
 }

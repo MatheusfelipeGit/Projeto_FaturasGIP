@@ -64,7 +64,7 @@ List<RelatorioFaltantesDTO> lista = new ArrayList<>(); //declara uma nova Lista,
        
     }
     
-    public void chamarProcedure(String MesRef) throws SQLException {
+    public void chamarProcedure(String MesRef, String anoref) throws SQLException {
         java.sql.Connection conn = null;
         CallableStatement callableStatement = null ;
 
@@ -73,10 +73,11 @@ List<RelatorioFaltantesDTO> lista = new ArrayList<>(); //declara uma nova Lista,
             // Assume que você tem uma classe de conexão separada
             
             // Chama a procedure usando CallableStatement
-            String sqlProcedure = "{call testeStatusMensal(?)}";
+            String sqlProcedure = "{call testeStatusMensal(?, ?)}";
             
             callableStatement = (CallableStatement) conn.prepareCall(sqlProcedure);
             callableStatement.setString(1, MesRef);
+            callableStatement.setString(2, anoref);
             callableStatement.execute();
         } finally {
             // Fecha o CallableStatement e a conexão

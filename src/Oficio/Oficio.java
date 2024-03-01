@@ -79,7 +79,7 @@ public class Oficio implements ActionListener {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
         String timestamp = dateFormat.format(new Date());
         
-        File arq = new File ("C:\\Users\\jateixeira\\Desktop\\OFÍCIOS", tipo + OficioNumb + ".pdf"); //esse é o tipo novo que vao abrir 
+        File arq = new File ("C:\\Users\\jateixeira\\Desktop\\oficiosExport", tipo + OficioNumb + ".pdf"); //esse é o tipo novo que vao abrir 
         /*if (arq.exists()){
             arq.delete(); //
         }*/

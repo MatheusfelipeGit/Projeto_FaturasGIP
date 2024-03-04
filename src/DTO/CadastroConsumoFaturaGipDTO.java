@@ -12,7 +12,17 @@ public class CadastroConsumoFaturaGipDTO {
     private String CodBarrasRed_cadastroConsumoFatura;
     private String CodigoBarraConTextField;
     private String CodBarrasRedTextField;
+    private String Atrasadas_cadastroConsumoFatura;
     //DTO serve para armazenar os dados que são encapsulados, e sempre precisam ter o mesmo nome dos componentes da tb do bd
+
+@Override
+      public String toString(){
+       if (getCodigoBarraConTextField().length() > 48) {
+       return getCodigoBarraConTextField().substring(42,48) + "...";
+       }
+        return "CodigoBarraConTextField" + getCodigoBarraConTextField();
+        
+    }
 
     /**
      * @return the CodigoBarrasCon_cadastroConsumoFatura
@@ -153,13 +163,19 @@ public class CadastroConsumoFaturaGipDTO {
     public void setCodBarrasRedTextField(String CodBarrasRedTextField) {
         this.CodBarrasRedTextField = CodBarrasRedTextField;
     }
-@Override
-      public String toString(){
-       if (getCodigoBarraConTextField().length() > 48) {
-       return getCodigoBarraConTextField().substring(42,48) + "...";
-       }
-        return "CodigoBarraConTextField" + getCodigoBarraConTextField();
-        
+
+    /**
+     * @return the Atrasadas_cadastroConsumoFatura
+     */
+    public String getAtrasadas_cadastroConsumoFatura() {
+        return Atrasadas_cadastroConsumoFatura;
+    }
+
+    /**
+     * @param Atrasadas_cadastroConsumoFatura the Atrasadas_cadastroConsumoFatura to set
+     */
+    public void setAtrasadas_cadastroConsumoFatura(String Atrasadas_cadastroConsumoFatura) {
+        this.Atrasadas_cadastroConsumoFatura = Atrasadas_cadastroConsumoFatura;
     }
 
 }

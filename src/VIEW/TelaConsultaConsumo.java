@@ -57,8 +57,10 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
         TiposTxt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         EditarBtn = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        MesVencTxt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        AtrasadasCheck = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela consumo fatura ");
@@ -68,73 +70,73 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
 
         ConsumoTxt.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Instalacao", "Cod.Barras", "Valor", "Kw", "Mes venc.", "Mes ref.", "Data cad.", "Ano", "barras red.", "tipo"
+                "Instalacao", "Cod.Barras", "Valor", "Kw", "Mes venc.", "Mes ref.", "Data cad.", "Ano", "barras red.", "tipo", "Atrasadas"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, true
+                false, false, false, false, false, false, false, false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -216,6 +218,11 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("MÊS VENC :");
 
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel10.setText("ATRASADAS:");
+
+        AtrasadasCheck.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Sim", "Não" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -232,21 +239,22 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
                     .addComponent(DataTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel7)
-                                .addComponent(ValorTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                                .addComponent(jTextField1))
-                            .addComponent(jLabel6))
-                        .addGap(60, 60, 60)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(InstalacaoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)
-                            .addComponent(KwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel7)
+                        .addComponent(ValorTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                        .addComponent(MesVencTxt))
+                    .addComponent(jLabel6)
                     .addComponent(jLabel3)
                     .addComponent(TiposTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(InstalacaoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(KwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(AtrasadasCheck, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(455, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -279,7 +287,7 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MesRefTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(KwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(MesVencTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -293,12 +301,14 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DataTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TiposTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79)
+                    .addComponent(TiposTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AtrasadasCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(78, 78, 78)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(ConsultarBtn)
@@ -353,7 +363,7 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
     }//GEN-LAST:event_AnoTxtActionPerformed
 
     private void ExportarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportarBtnActionPerformed
-    exportarParaPlanilha (InstalacaoTxt.getText(), MesRefTxt.getText(), AnoTxt.getText(), ValorTxt.getText(), DataTxt.getText(),KwTxt.getText(), TiposTxt.getText(), InstalacaoTxt.getText(),  MesRefTxt.getText(), AnoTxt.getText(), ValorTxt.getText(), DataTxt.getText(), KwTxt.getText(),TiposTxt.getText());
+    exportarParaPlanilha (InstalacaoTxt.getText(), MesRefTxt.getText(), MesVencTxt.getText(), AnoTxt.getText(), ValorTxt.getText(), DataTxt.getText(),KwTxt.getText(), TiposTxt.getText(), (String) AtrasadasCheck.getSelectedItem(),InstalacaoTxt.getText(),  MesRefTxt.getText(), MesVencTxt.getText(), AnoTxt.getText(), ValorTxt.getText(), DataTxt.getText(), KwTxt.getText(),TiposTxt.getText(), (String) AtrasadasCheck.getSelectedItem());
     }//GEN-LAST:event_ExportarBtnActionPerformed
 
     private void EditarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarBtnActionPerformed
@@ -401,6 +411,7 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AnoTxt;
+    private javax.swing.JComboBox<String> AtrasadasCheck;
     private javax.swing.JButton ConsultarBtn;
     private javax.swing.JTable ConsumoTxt;
     private javax.swing.JTextField DataTxt;
@@ -409,11 +420,13 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
     private javax.swing.JTextField InstalacaoTxt;
     private javax.swing.JTextField KwTxt;
     private javax.swing.JTextField MesRefTxt;
+    private javax.swing.JTextField MesVencTxt;
     private javax.swing.JTextField TiposTxt;
     private javax.swing.JTextField TodosTxt;
     private javax.swing.JTextField ValorTxt;
     private javax.swing.JButton VoltarBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -424,7 +437,6 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
     
     
@@ -437,6 +449,7 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
             
             String Instalacao = InstalacaoTxt.getText();
             String Mesref = MesRefTxt.getText();
+            String MesVenc = MesVencTxt.getText();
             String AnoRef = AnoTxt.getText();
           
             String Kw = KwTxt.getText();
@@ -444,19 +457,22 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
             
             String Valor = ValorTxt.getText();
             String Tipos = TiposTxt.getText();
+            String Atrasadas  = (String) AtrasadasCheck.getSelectedItem();
             String PesqGeral = TodosTxt.getText();
             
             String Filtroinstalacao = InstalacaoTxt.getText();
             String FiltroMesRef = MesRefTxt.getText();
+            String FiltroMesVenc = MesVencTxt.getText();
             String FiltroAnoRef = AnoTxt.getText();
             String FiltroValor = ValorTxt.getText();
             String FiltroData = DataTxt.getText();
             String FiltroKw = KwTxt.getText();
             String FiltroTipos = TiposTxt.getText();
+            String FiltroAtrasadas =(String) AtrasadasCheck.getSelectedItem();
             
             
             
-            List<ConsultarConsumoGipDTO> lista = objconsultarConsumogipdao.consultarConsumo(Instalacao, Mesref, AnoRef, Valor, Data, Kw, Tipos, PesqGeral, Filtroinstalacao, FiltroMesRef, FiltroAnoRef, FiltroValor, FiltroData, FiltroKw, FiltroTipos);
+            List<ConsultarConsumoGipDTO> lista = objconsultarConsumogipdao.consultarConsumo(Instalacao, Mesref, MesVenc, AnoRef, Valor, Data, Kw, Tipos, Atrasadas, PesqGeral, Filtroinstalacao, FiltroMesRef, FiltroMesVenc, FiltroAnoRef, FiltroValor, FiltroData, FiltroKw, FiltroTipos, FiltroAtrasadas);
                     
                  
                 for(int i = 0; i < lista.size(); i ++){
@@ -471,6 +487,7 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
                         lista.get(i).getAno_cadastroConsumoFatura(),
                         lista.get(i).getCodBarrasRed_cadastroConsumoFatura(),
                         lista.get(i).getTipos_faturanova(),
+                        lista.get(i).getAtrasadas_cadastroConsumoFatura(),
                         
                         
                     });
@@ -482,9 +499,9 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"listarValores" + erro);
         }
     }
-    private void exportarParaPlanilha(String Instalacao, String Mesref, String AnoRef, String Valor, String Data, String Kw, String Tipos, String Filtroinstalacao, String FiltroMesRef, String FiltroAnoRef, String FiltroValor, String FiltroData, String FiltroKw, String FiltroTipos) {
+    private void exportarParaPlanilha(String Instalacao, String Mesref, String MesVenc,String AnoRef, String Valor, String Data, String Kw, String Tipos, String Atrasadas, String Filtroinstalacao, String FiltroMesRef, String FiltroMesVenc, String FiltroAnoRef, String FiltroValor, String FiltroData, String FiltroKw, String FiltroTipos, String FiltroAtrasadas) {
         ConsultarConsumoGipDAO dao = new ConsultarConsumoGipDAO();
-        List<ConsultarConsumoGipDTO> listaConsultas = dao.consultarConsumo(Instalacao, Mesref, AnoRef, Valor, Data, Kw, Tipos, "", Filtroinstalacao, FiltroMesRef, FiltroAnoRef, FiltroValor, FiltroData, FiltroKw, FiltroTipos); // Chamada correta
+        List<ConsultarConsumoGipDTO> listaConsultas = dao.consultarConsumo(Instalacao, Mesref, MesVenc,AnoRef, Valor, Data, Kw, Tipos, Atrasadas, "", Filtroinstalacao, FiltroMesRef, FiltroMesVenc,FiltroAnoRef, FiltroValor, FiltroData, FiltroKw, FiltroTipos, FiltroAtrasadas); // Chamada correta
         String DocumentsTeste = "C:\\Users\\jateixeira\\Desktop\\planilhas exportadas\\consumofaturas.xlsx"; //ajusta o caminho p achar a planilha
         
         dao.exportarParaPlanilha(listaConsultas, DocumentsTeste);

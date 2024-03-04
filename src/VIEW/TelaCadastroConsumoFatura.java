@@ -46,6 +46,8 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
         DataCadTextField = new javax.swing.JFormattedTextField();
         KwConsumo = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        AtrasadasBox = new javax.swing.JCheckBox();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -180,6 +182,15 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel9.setText("kw:");
 
+        AtrasadasBox.setText("Não");
+        AtrasadasBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtrasadasBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Atrasadas:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -196,35 +207,37 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(LimparConBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(1, 1, 1))
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel10)
+                                            .addComponent(jLabel7)
+                                            .addComponent(LimparConBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(ValorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(CodigoBarraConTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(KwConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(KwConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(MesVenComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(DataCadTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(AnoConTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(CodBarrasRedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(MesRefComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(MesVenComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(AtrasadasBox)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(56, 56, 56)
+                                .addGap(68, 68, 68)
                                 .addComponent(VoltarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(65, 65, 65)
-                                .addComponent(CadastrarConBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(CadastrarConBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(91, 91, 91)
                         .addComponent(jLabel1)))
@@ -250,32 +263,36 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(KwConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 31, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MesVenComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MesRefComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(MesRefComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(AnoConTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AnoConTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel6)
+                    .addComponent(DataCadTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DataCadTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel7)
+                    .addComponent(CodBarrasRedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CodBarrasRedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(46, 46, 46)
+                    .addComponent(AtrasadasBox)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LimparConBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(VoltarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CadastrarConBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -286,9 +303,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -359,7 +374,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
                 }
 
                 ValorTextField.setText(firstSixChars);*/
-        String CodigoBarras, Valor, Kw, MesVencimento, MesReferente, DataCadastro, Ano, CodigoBarrasRed;
+        String CodigoBarras, Valor, Kw, MesVencimento, MesReferente, DataCadastro, Ano, CodigoBarrasRed, Atrasadas;
 
         CodigoBarras = CodigoBarraConTextField.getText();
         Valor = ValorTextField.getText();
@@ -369,6 +384,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
         DataCadastro = DataCadTextField.getText();
         Ano = AnoConTextField.getText();
         CodigoBarrasRed = CodBarrasRedTextField.getText();
+        Atrasadas = AtrasadasBox.getText();
 
         CadastroConsumoFaturaGipDTO objcadastroconsumofaturagipdto = new CadastroConsumoFaturaGipDTO();
 
@@ -380,6 +396,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
         objcadastroconsumofaturagipdto.setAno_cadastroConsumoFatura(Ano);
         objcadastroconsumofaturagipdto.setDataCadastro_cadastroConsumoFatura(DataCadastro);
         objcadastroconsumofaturagipdto.setCodBarrasRed_cadastroConsumoFatura(CodigoBarrasRed);
+        objcadastroconsumofaturagipdto.setAtrasadas_cadastroConsumoFatura(Atrasadas);
 
         CadastroConsumoFaturaGipDAO objcadastroconsumofaturagipdao = new CadastroConsumoFaturaGipDAO();
         objcadastroconsumofaturagipdao.cadastrarConFatura(objcadastroconsumofaturagipdto);
@@ -392,6 +409,12 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
         } catch (SQLException e) {
             // Trate exceções aqui
             e.printStackTrace();
+        }
+        
+        if(AtrasadasBox.isSelected()){
+            AtrasadasBox.setText("Sim");
+        }else{
+            AtrasadasBox.setText("Não");
         }
 
         // ambos os comandos servem para limpar os campos chamados (CodigoBarraTextField e Kw)
@@ -478,7 +501,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
                 }
 
                 ValorTextField.setText(firstSixChars);*/
-            String CodigoBarras, Valor, Kw, MesVencimento, MesReferente, DataCadastro, Ano, CodigoBarrasRed;
+            String CodigoBarras, Valor, Kw, MesVencimento, MesReferente, DataCadastro, Ano, CodigoBarrasRed, Atrasadas;
 
             CodigoBarras = CodigoBarraConTextField.getText();
             Valor = ValorTextField.getText();
@@ -488,6 +511,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
             DataCadastro = DataCadTextField.getText();
             Ano = AnoConTextField.getText();
             CodigoBarrasRed = CodBarrasRedTextField.getText();
+            Atrasadas = AtrasadasBox.getText();
 
             CadastroConsumoFaturaGipDTO objcadastroconsumofaturagipdto = new CadastroConsumoFaturaGipDTO();
 
@@ -499,6 +523,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
             objcadastroconsumofaturagipdto.setAno_cadastroConsumoFatura(Ano);
             objcadastroconsumofaturagipdto.setDataCadastro_cadastroConsumoFatura(DataCadastro);
             objcadastroconsumofaturagipdto.setCodBarrasRed_cadastroConsumoFatura(CodigoBarrasRed);
+            objcadastroconsumofaturagipdto.setAtrasadas_cadastroConsumoFatura(Atrasadas);
 
             CadastroConsumoFaturaGipDAO objcadastroconsumofaturagipdao = new CadastroConsumoFaturaGipDAO();
             objcadastroconsumofaturagipdao.cadastrarConFatura(objcadastroconsumofaturagipdto);
@@ -512,6 +537,13 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
                 // Trate exceções aqui
                 e.printStackTrace();
             }
+            
+             
+        if(AtrasadasBox.isSelected()){
+            AtrasadasBox.setText("Sim");
+        }else{
+            AtrasadasBox.setText("Não");
+        }
 
             // ambos os comandos servem para limpar os campos chamados (CodigoBarraTextField e Kw)
             CodigoBarraConTextField.setText("");
@@ -570,7 +602,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
                 }
 
                 ValorTextField.setText(firstSixChars);*/
-            String CodigoBarras, Valor, Kw, MesVencimento, MesReferente, DataCadastro, Ano, CodigoBarrasRed;
+            String CodigoBarras, Valor, Kw, MesVencimento, MesReferente, DataCadastro, Ano, CodigoBarrasRed, Atrasadas;
 
             CodigoBarras = CodigoBarraConTextField.getText();
             Valor = ValorTextField.getText();
@@ -580,6 +612,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
             DataCadastro = DataCadTextField.getText();
             Ano = AnoConTextField.getText();
             CodigoBarrasRed = CodBarrasRedTextField.getText();
+            Atrasadas = AtrasadasBox.getText();
 
             CadastroConsumoFaturaGipDTO objcadastroconsumofaturagipdto = new CadastroConsumoFaturaGipDTO();
 
@@ -591,6 +624,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
             objcadastroconsumofaturagipdto.setAno_cadastroConsumoFatura(Ano);
             objcadastroconsumofaturagipdto.setDataCadastro_cadastroConsumoFatura(DataCadastro);
             objcadastroconsumofaturagipdto.setCodBarrasRed_cadastroConsumoFatura(CodigoBarrasRed);
+            objcadastroconsumofaturagipdto.setAtrasadas_cadastroConsumoFatura(Atrasadas);
 
             CadastroConsumoFaturaGipDAO objcadastroconsumofaturagipdao = new CadastroConsumoFaturaGipDAO();
             objcadastroconsumofaturagipdao.cadastrarConFatura(objcadastroconsumofaturagipdto);
@@ -604,6 +638,12 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
                 // Trate exceções aqui
                 e.printStackTrace();
             }
+             
+        if(AtrasadasBox.isSelected()){
+            AtrasadasBox.setText("Sim");
+        }else{
+            AtrasadasBox.setText("Não");
+        }
 
             // ambos os comandos servem para limpar os campos chamados (CodigoBarraTextField e Kw)
             CodigoBarraConTextField.setText("");
@@ -662,7 +702,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
                 }
 
                 ValorTextField.setText(firstSixChars);*/
-            String CodigoBarras, Valor, Kw, MesVencimento, MesReferente, DataCadastro, Ano, CodigoBarrasRed;
+            String CodigoBarras, Valor, Kw, MesVencimento, MesReferente, DataCadastro, Ano, CodigoBarrasRed, Atrasadas;
 
             CodigoBarras = CodigoBarraConTextField.getText();
             Valor = ValorTextField.getText();
@@ -672,6 +712,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
             DataCadastro = DataCadTextField.getText();
             Ano = AnoConTextField.getText();
             CodigoBarrasRed = CodBarrasRedTextField.getText();
+            Atrasadas = AtrasadasBox.getText();
 
             CadastroConsumoFaturaGipDTO objcadastroconsumofaturagipdto = new CadastroConsumoFaturaGipDTO();
 
@@ -683,6 +724,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
             objcadastroconsumofaturagipdto.setAno_cadastroConsumoFatura(Ano);
             objcadastroconsumofaturagipdto.setDataCadastro_cadastroConsumoFatura(DataCadastro);
             objcadastroconsumofaturagipdto.setCodBarrasRed_cadastroConsumoFatura(CodigoBarrasRed);
+            objcadastroconsumofaturagipdto.setAtrasadas_cadastroConsumoFatura(Atrasadas);
 
             CadastroConsumoFaturaGipDAO objcadastroconsumofaturagipdao = new CadastroConsumoFaturaGipDAO();
             objcadastroconsumofaturagipdao.cadastrarConFatura(objcadastroconsumofaturagipdto);
@@ -696,6 +738,13 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
                 // Trate exceções aqui
                 e.printStackTrace();
             }
+            
+             
+        if(AtrasadasBox.isSelected()){
+            AtrasadasBox.setText("Sim");
+        }else{
+            AtrasadasBox.setText("Não");
+        }
 
             // ambos os comandos servem para limpar os campos chamados (CodigoBarraTextField e Kw)
             CodigoBarraConTextField.setText("");
@@ -705,6 +754,15 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_CodigoBarraConTextFieldKeyPressed
+
+    private void AtrasadasBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasadasBoxActionPerformed
+        
+        if(AtrasadasBox.isSelected()){
+            AtrasadasBox.setText("Sim");
+        }else{
+            AtrasadasBox.setText("Não");
+        }
+    }//GEN-LAST:event_AtrasadasBoxActionPerformed
 
     public static void main(String args[]) {
 
@@ -717,6 +775,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AnoConTextField;
+    private javax.swing.JCheckBox AtrasadasBox;
     private javax.swing.JButton CadastrarConBtn;
     private javax.swing.JTextField CodBarrasRedTextField;
     private javax.swing.JTextField CodigoBarraConTextField;
@@ -728,6 +787,7 @@ public class TelaCadastroConsumoFatura extends javax.swing.JFrame {
     private javax.swing.JTextField ValorTextField;
     private javax.swing.JButton VoltarBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

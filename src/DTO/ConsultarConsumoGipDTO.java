@@ -14,6 +14,7 @@ public class ConsultarConsumoGipDTO {
     private String CodBarrasRed_cadastroConsumoFatura;
     private String Instalacao_faturanova;
     private String Tipos_faturanova;
+    private String Atrasadas_cadastroConsumoFatura;
 
     /**
      * @return the CodigoBarrasCon_cadastroConsumoFatura
@@ -153,6 +154,20 @@ public class ConsultarConsumoGipDTO {
      */
     public void setTipos_faturanova(String Tipos_faturanova) {
         this.Tipos_faturanova = Tipos_faturanova;
+    }
+
+    /**
+     * @return the Atrasadas_cadastroConsumoFatura
+     */
+    public String getAtrasadas_cadastroConsumoFatura() {
+        return Atrasadas_cadastroConsumoFatura;
+    }
+
+    /**
+     * @param Atrasadas_cadastroConsumoFatura the Atrasadas_cadastroConsumoFatura to set
+     */
+    public void setAtrasadas_cadastroConsumoFatura(String Atrasadas_cadastroConsumoFatura) {
+        this.Atrasadas_cadastroConsumoFatura = Atrasadas_cadastroConsumoFatura;
     }
 
 }

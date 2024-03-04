@@ -27,7 +27,7 @@ public class ConsultarConsumoGipDAO {
     
     List<ConsultarConsumoGipDTO> lista = new ArrayList<>();
     
-    public List<ConsultarConsumoGipDTO> consultarConsumo(String instalacao, String Mesref, String AnoRef, String Valor, String Data, String Kw, String Tipos,String PesqGeral, String Filtroinstalacao, String FiltroMesRef, String FiltroAnoRef, String FiltroValor, String FiltroData, String FiltroKw, String FiltroTipos) {
+    public List<ConsultarConsumoGipDTO> consultarConsumo(String instalacao, String Mesref, String MesVenc, String AnoRef, String Valor, String Data, String Kw, String Tipos,String Atrasadas, String PesqGeral, String Filtroinstalacao, String FiltroMesRef, String FiltroMesVenc, String FiltroAnoRef, String FiltroValor, String FiltroData, String FiltroKw, String FiltroTipos, String FiltroAtrasadas) {
         //declaração de Strings de pesquisa
         conn = new ConexaoGipDAO().conectaBD();//realiza conexao
         
@@ -43,6 +43,10 @@ public class ConsultarConsumoGipDAO {
         
         if (!Mesref.isEmpty()) {
             sql += " AND MesReferente_cadastroConsumoFatura LIKE ? ";
+        }
+        
+        if (!MesVenc.isEmpty()) {
+            sql += " AND MesVencimento_cadastroConsumoFatura LIKE ? ";
         }
             
         if (!AnoRef.isEmpty()) {
@@ -64,6 +68,9 @@ public class ConsultarConsumoGipDAO {
         if (!Tipos.isEmpty()) {
             sql += " AND Tipos_faturanova LIKE ? "; // Adiciona a condição para o CodBarrasRed de referência
         }
+        if (!Atrasadas.isEmpty()) {
+            sql += " AND Atrasadas_cadastroConsumoFatura LIKE ? "; // Adiciona a condição para o CodBarrasRed de referência
+        }
         
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -73,6 +80,10 @@ public class ConsultarConsumoGipDAO {
         
         if (!FiltroMesRef.isEmpty()) {
             sql += " AND MesReferente_cadastroConsumoFatura LIKE ? "; // Adiciona a condição de referência
+        }
+        
+        if (!FiltroMesVenc.isEmpty()) {
+            sql += " AND MesVencimento_cadastroConsumoFatura LIKE ? "; // Adiciona a condição de referência
         }
         
         if (!FiltroAnoRef.isEmpty()) {
@@ -94,6 +105,9 @@ public class ConsultarConsumoGipDAO {
         if (!FiltroTipos.isEmpty()) {
             sql += " AND Tipos_faturanova LIKE ? "; // Adiciona a condição de referência
         }
+        if (!FiltroAtrasadas.isEmpty()) {
+            sql += " AND Atrasadas_cadastroConsumoFatura LIKE ? "; // Adiciona a condição de referência
+        }
         
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -104,9 +118,10 @@ public class ConsultarConsumoGipDAO {
                     " Valor_cadastroConsumoFatura LIKE ? OR " +
                     " Kw_cadastroConsumoFatura LIKE ? OR " +
                     " MesReferente_cadastroConsumoFatura LIKE ? OR " +
-                    " Ano_cadastroConsumoFatura LIKE ? OR " +
-                    " CodBarrasRed_cadastroConsumoFatura LIKE ? OR " +
                     " MesVencimento_cadastroConsumoFatura LIKE ? OR " +
+                    " Ano_cadastroConsumoFatura LIKE ? OR " +
+                    " CodBarrasRed_cadastroConsumoFatura LIKE ? OR " + 
+                    " Atrasadas_cadastroConsumoFatura LIKE ? OR " +
                     " DataCadastro_cadastroConsumoFatura LIKE ? ) " ;  // Adiciona a condição para a pesquisa geral em várias colunas
                    
         } 
@@ -131,6 +146,10 @@ public class ConsultarConsumoGipDAO {
             pstm.setString(index++, "%" + Mesref + "%"); // Adiciona o valor 
         }
         
+        if (!MesVenc.isEmpty()) {
+            pstm.setString(index++, "%" + MesVenc + "%"); // Adiciona o valor 
+        }
+        
         if (!AnoRef.isEmpty()) {
             pstm.setString(index++, "%" + AnoRef + "%"); // Adiciona o valor 
         }
@@ -151,9 +170,12 @@ public class ConsultarConsumoGipDAO {
         if (!Tipos.isEmpty()) {
             pstm.setString(index++, "%" + Tipos +"%"); // Adiciona o valor 
         }
+        if (!Atrasadas.isEmpty()) {
+            pstm.setString(index++, "%" + Atrasadas +"%"); // Adiciona o valor 
+        }
         
         if (!PesqGeral.isEmpty()) {
-            for (int i = 1; i <= 10; i++) {
+            for (int i = 1; i <= 12; i++) {
                 pstm.setString(index++,"%"+ PesqGeral +"%"); // Adiciona o valor 
             }
         }
@@ -168,6 +190,10 @@ public class ConsultarConsumoGipDAO {
         if (!FiltroMesRef.isEmpty()) {
         sql += " AND MesReferente_cadastroConsumoFatura = ? ";
         pstm.setString(index++, FiltroMesRef); //não tem a %, por isso ele é preciso na hora do filtro em relação a exportação 
+        }
+        if (!FiltroMesVenc.isEmpty()) {
+        sql += " AND MesVencimento_cadastroConsumoFatura = ? ";
+        pstm.setString(index++, FiltroMesVenc); //não tem a %, por isso ele é preciso na hora do filtro em relação a exportação 
         }
          
         if (!FiltroAnoRef.isEmpty()) {
@@ -189,6 +215,10 @@ public class ConsultarConsumoGipDAO {
         if (!FiltroTipos.isEmpty()) {
         sql += " AND Tipos_faturanova = ? ";
         pstm.setString(index++, FiltroTipos); //não tem a %, por isso ele é preciso na hora do filtro em relação a exportação 
+        }
+        if (!FiltroAtrasadas.isEmpty()) {
+        sql += " AND Atrasadas_cadastroConsumoFatura = ? ";
+        pstm.setString(index++, FiltroAtrasadas); //não tem a %, por isso ele é preciso na hora do filtro em relação a exportação 
         }
         
         
@@ -212,6 +242,7 @@ public class ConsultarConsumoGipDAO {
              objconsultarConsumoGipDTO.setAno_cadastroConsumoFatura(rs.getString("Ano_cadastroConsumoFatura"));
              objconsultarConsumoGipDTO.setCodBarrasRed_cadastroConsumoFatura(rs.getString("CodBarrasRed_cadastroConsumoFatura"));
              objconsultarConsumoGipDTO.setTipos_faturanova(rs.getString("Tipos_faturanova"));
+             objconsultarConsumoGipDTO.setAtrasadas_cadastroConsumoFatura(rs.getString("Atrasadas_cadastroConsumoFatura"));
              
              
              lista.add(objconsultarConsumoGipDTO);
@@ -247,6 +278,7 @@ public class ConsultarConsumoGipDAO {
         headerRow.createCell(7).setCellValue("Ano");
         headerRow.createCell(8).setCellValue("Cod.Barras Reduzido");
         headerRow.createCell(9).setCellValue("Tipos");
+        headerRow.createCell(10).setCellValue("Atrasadas");
 
         // Preenche os dados na planilha a partir da lista de DTOs
         for (ConsultarConsumoGipDTO dto : listar) {
@@ -261,6 +293,7 @@ public class ConsultarConsumoGipDAO {
             dataRow.createCell(7).setCellValue(dto.getAno_cadastroConsumoFatura());
             dataRow.createCell(8).setCellValue(dto.getCodBarrasRed_cadastroConsumoFatura());
             dataRow.createCell(9).setCellValue(dto.getTipos_faturanova());
+            dataRow.createCell(10).setCellValue(dto.getAtrasadas_cadastroConsumoFatura());
         }
 
         // mensagem que avisa oonde a planilha está/ Salva a mesma

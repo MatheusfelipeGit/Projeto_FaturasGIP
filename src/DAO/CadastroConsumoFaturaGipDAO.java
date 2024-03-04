@@ -4,6 +4,7 @@ package DAO;
 import DTO.CadastroConsumoFaturaGipDTO;
 import com.mysql.cj.jdbc.CallableStatement;
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -47,7 +48,7 @@ public class CadastroConsumoFaturaGipDAO {
             // Se o código reduzido do novo consumo foi encontrado, exibir o tipo em um JOptionPane
             if (rs.next()) {
                 // Continue com o cadastro
-                String sqlInserirDados = "INSERT INTO cadastroConsumoFatura (CodigoBarrasCon_cadastroConsumoFatura, Valor_cadastroConsumoFatura, Kw_cadastroConsumoFatura, MesVencimento_cadastroConsumoFatura, MesReferente_cadastroConsumoFatura, Ano_cadastroConsumoFatura, DataCadastro_cadastroConsumoFatura, CodBarrasRed_cadastroConsumoFatura) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                String sqlInserirDados = "INSERT INTO cadastroConsumoFatura (CodigoBarrasCon_cadastroConsumoFatura, Valor_cadastroConsumoFatura, Kw_cadastroConsumoFatura, MesVencimento_cadastroConsumoFatura, MesReferente_cadastroConsumoFatura, Ano_cadastroConsumoFatura, DataCadastro_cadastroConsumoFatura, CodBarrasRed_cadastroConsumoFatura, Atrasadas_cadastroConsumoFatura) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
                  String tipoFatura = rs.getString("Tipos_faturanova");
                 
                 pstm = conn.prepareStatement(sqlInserirDados);
@@ -59,6 +60,7 @@ public class CadastroConsumoFaturaGipDAO {
                 pstm.setString(6, objcadastroconsumofaturagipdto.getAno_cadastroConsumoFatura());
                 pstm.setString(7, objcadastroconsumofaturagipdto.getDataCadastro_cadastroConsumoFatura());
                 pstm.setString(8, objcadastroconsumofaturagipdto.getCodBarrasRed_cadastroConsumoFatura());
+                pstm.setString(9, objcadastroconsumofaturagipdto.getAtrasadas_cadastroConsumoFatura());
                 
                 pstm.execute();
                 pstm.close();

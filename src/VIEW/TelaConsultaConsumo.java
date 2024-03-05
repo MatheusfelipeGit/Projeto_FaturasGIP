@@ -201,7 +201,7 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Instalação:");
+        jLabel9.setText("INSTALAÇÃO:");
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel3.setText("TIPOS:");

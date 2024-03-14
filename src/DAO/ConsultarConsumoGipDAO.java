@@ -175,7 +175,7 @@ public class ConsultarConsumoGipDAO {
         }
         
         if (!PesqGeral.isEmpty()) {
-            for (int i = 1; i <= 12; i++) {
+            for (int i = 1; i <= 11; i++) {
                 pstm.setString(index++,"%"+ PesqGeral +"%"); // Adiciona o valor 
             }
         }

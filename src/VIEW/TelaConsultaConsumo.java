@@ -333,10 +333,12 @@ public class TelaConsultaConsumo extends javax.swing.JFrame {
     private void ConsultarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarBtnActionPerformed
          try{
             listarValores();
-        }
+        }  
+         
         catch (Exception erro){
             JOptionPane.showMessageDialog(null, "não há registros identificados" + erro);
         }
+         
     }//GEN-LAST:event_ConsultarBtnActionPerformed
 //////
     private void VoltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtnActionPerformed

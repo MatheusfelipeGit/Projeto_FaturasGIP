@@ -192,8 +192,8 @@ public class TelaCadastroNovaFatura extends javax.swing.JFrame {
                             .addComponent(VoltarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(CadastrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(TiposComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(TiposComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ReduzidoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(31, 31, 31))
@@ -324,6 +324,8 @@ public class TelaCadastroNovaFatura extends javax.swing.JFrame {
         }else{
             AvencaTxt.setText("Não");
         }
+        
+        
         /*MedidorInstalacao = Medidor1TextField.getText();
 
         boolean medidorExiste = objfaturasgipdao.verificarMedidorExistente(MedidorInstalacao);
@@ -358,9 +360,11 @@ public class TelaCadastroNovaFatura extends javax.swing.JFrame {
     }//GEN-LAST:event_TiposComboBoxActionPerformed
 
     private void VoltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtnActionPerformed
+        
+        //esse código serve para mudar de uma tela para outra 
         TelaMenu telaMenu = new TelaMenu();
             telaMenu.setVisible(true);
-            
+        //esse fecha a tela     
             this.dispose();
         
     }//GEN-LAST:event_VoltarBtnActionPerformed
